@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
 .header1{
 
 background-color: aqua;
@@ -11,4 +17,93 @@ width: 100px;
 height: 10vh;
 background-color: bisque;
 
+}
+
+.header-image {
+    background-image: url("images/header-image.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+
+.header-text {
+    width: 60%;
+    height: 100%;
+    /* margin: 10px; */
+    padding-left: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: beige; */
+}
+
+.header-title {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.header-body {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+#speciality {
+    margin: 3rem 0 4rem 0;
+}
+
+.speciality-header {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.speciality-category {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.speciality-card {
+    border: 1px solid #fff;
+    width: 200px;
+    height: 80px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-image: linear-gradient(to right bottom, #6bc1d1, #66bed8, #66bade, #6bb5e3, #74b0e6, #89b3e9, #9cb7eb, #acbbec, #c4caf0, #d9daf3, #ebebf7, #fcfcfc);
+    box-shadow: 10px 10px 5px #eee;
+}
+
+#our-story {
+    background-color: #eee;
+    display: flex;
+}
+
+.story-text {
+    width: 50%;
+    margin: 3rem 1rem 3rem 3rem;
+}
+
+.story-header {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.story-body {
+    line-height: 180%;
+    margin-top: 1rem;
+}
+
+.story-image {
+    width: 50%;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
 }
