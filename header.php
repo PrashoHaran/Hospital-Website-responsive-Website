@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="col-3 col-lg-3">
-                      <a href="http://" class="link-opacity-50-hover link-underline-light"><i class="bi bi-info-circle mx-5 mx-lg-2"></i> About Us</a>
+                      <a href="about.php" class="link-opacity-50-hover link-underline-light"><i class="bi bi-info-circle mx-5 mx-lg-2"></i> About Us</a>
                     </div>
 
                     <div class="col-3 col-lg-3">
