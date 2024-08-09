@@ -48,7 +48,7 @@
                   <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house-fill mx-2"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-info-circle mx-2"></i>About Us</a>
+                  <a class="nav-link active" aria-current="page" href="about.php"><i class="bi bi-info-circle mx-2"></i>About Us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-hospital mx-2"></i>Appointment</a>
@@ -81,7 +81,7 @@
 
 
 
-</ul>
+              </ul>
             </div>
 
             <div class="col-12 align-self-end align-items-center">
@@ -96,7 +96,7 @@
 
                 <ul class="nav-item">
                   <a class="nav-link active" aria-current="page" href="adminLogin.php"><i class="bi bi-file-earmark-text mx-2"></i>Admin Login</a>
-</ul>
+                </ul>
               </div>
 
             </div>
@@ -110,19 +110,24 @@
       <div class="col-12 offset-lg-1 col-lg-10">
 
         <div class="row">
-
+          <!--  carousel images  Auto scrolling -->
 
           <div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
             <div class="carousel-inner ">
+
               <div class="carousel-item active">
+
                 <img src="images/img1.jpg" class="d-block w-100" alt="...">
               </div>
+
               <div class="carousel-item">
                 <img src="images/img2.jpg" class="d-block w-100" alt="...">
               </div>
+
               <div class="carousel-item">
                 <img src="images/img3.jpg" class="d-block w-100" alt="...">
               </div>
+
             </div>
 
           </div>
