@@ -9,12 +9,24 @@ class Database{
     
     if(!isset(Database::$connection)){
     
-    Database::$connection =  new mysqli("127.0.0.1","root","","database name","3306");
+    Database::$connection =  new mysqli("localhost","root","","hospital","3307");
     
     }
 }
 
 
+public static function iud($q){
+
+    Database::setUpConnection();
+    Database::$connection->query($q);
+}
+
+public static function search($q){
+
+    Database::setUpConnection();
+    $resultset = Database::$connection->query($q);
+    return $resultset;
+}
 
 
 }
