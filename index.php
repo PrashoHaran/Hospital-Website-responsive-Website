@@ -57,31 +57,30 @@
                   <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-file-earmark-text mx-2"></i>Lab Report</a>
                 </li>
                 <!--   <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form>
--->
+              </ul>
+              </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-success" type="submit">Search</button>
+              </form>-->
 
 
 
-</ul>
+              </ul>
             </div>
 
             <div class="col-12 align-self-end align-items-center">
@@ -96,7 +95,7 @@
 
                 <ul class="nav-item">
                   <a class="nav-link active" aria-current="page" href="adminLogin.php"><i class="bi bi-file-earmark-text mx-2"></i>Admin Login</a>
-</ul>
+                </ul>
               </div>
 
             </div>
@@ -115,26 +114,35 @@
           <div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
             <div class="carousel-inner ">
               <div class="carousel-item active">
-                <img src="images/img1.jpg" class="d-block w-100" alt="...">
+                <!-- <img src="images/img1.jpg" class="d-block w-100" alt="..."> -->
+                <div class="image-1-display">
+                <div class="image-1-text">
+                  <div class="image-1-title">Where Healing Begins with Heart, Your Trusted Partner in Health</div>
+                </div>
+                </div>
               </div>
               <div class="carousel-item">
-                <img src="images/img2.jpg" class="d-block w-100" alt="...">
+                <!-- <img src="images/img2.jpg" class="d-block w-100" alt="..."> -->
+                <div class="image-2-display">
+                <div class="image-2-text">
+                  <div class="image-2-title">Caring for the Community, Committed to You</div>
+                </div>
+                </div>
               </div>
               <div class="carousel-item">
-                <img src="images/img3.jpg" class="d-block w-100" alt="...">
+                <!-- <img src="images/img3.jpg" class="d-block w-100" alt="..."> -->
+                <div class="image-3-display">
+                <div class="image-3-text">
+                  <div class="image-3-title">Excellence in Healthcare, Every Day. Together for a Healthier Tomorrow!</div>
+                </div>
+                </div>
               </div>
             </div>
-
           </div>
 
-        </div>
+          <div class="col-12 " style="background-color: #E3F4CE;">
 
-
-      </div>
-
-      <div class="col-12 " style="background-color: #E3F4CE;">
-
-        <div class="col-12 offset-lg-2 col-lg-8 mt-3 ">
+           <div class="col-12 offset-lg-2 col-lg-8 mt-3 ">
 
           <div class="row">
 
