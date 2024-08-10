@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="col-3 col-lg-3">
-                       <a href="http://" class="link-opacity-50-hover link-underline-light"><i class="bi bi-hospital mx-2"></i>Appointment</a>
+                       <a href="Appointment.php" class="link-opacity-50-hover link-underline-light"><i class="bi bi-hospital mx-2"></i>Appointment</a>
                     </div>
 
                     <div class="col-3 col-lg-3">

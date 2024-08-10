@@ -51,7 +51,7 @@
                   <a class="nav-link active" aria-current="page" href="about.php"><i class="bi bi-info-circle mx-2"></i>About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-hospital mx-2"></i>Appointment</a>
+                  <a class="nav-link active" aria-current="page" href="Appointment.php"><i class="bi bi-hospital mx-2"></i>Appointment</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-file-earmark-text mx-2"></i>Lab Report</a>
