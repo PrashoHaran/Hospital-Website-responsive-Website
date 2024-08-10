@@ -35,7 +35,7 @@
 <form>
   <div class="mb-3 mx-1">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" class="form-control" id="adminEmail" aria-describedby="emailHelp">
    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
   </div>
 
@@ -44,7 +44,7 @@
   
   <div class="mb-3 mx-1 col-10">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="password">
+    <input type="password" class="form-control" id="adminPassword">
  
   </div>
 
@@ -82,7 +82,9 @@ else{
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div> -->
-  <button type="submit" class="btn btn-primary my-1 mx-1">Sign In</button>
+  <button type="submit" class="btn btn-primary my-1 mx-1 col-3" onclick="adminSignIn();">Sign In</button>
+
+<span class=" col-4 text-danger text-center" id="msg"></span>
 
 </form>
 
@@ -101,6 +103,6 @@ else{
 
 </div>
 
-    
+    <script src="script.js"></script>
 </body>
 </html>
