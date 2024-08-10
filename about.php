@@ -6,6 +6,7 @@
     <!-- boostrap -->
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
+   
     <title>About Us</title>
 </head>
 <body>

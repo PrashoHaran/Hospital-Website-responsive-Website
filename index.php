@@ -48,7 +48,7 @@
                   <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house-fill mx-2"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-info-circle mx-2"></i>About Us</a>
+                  <a class="nav-link active" aria-current="page" href="about.php"><i class="bi bi-info-circle mx-2"></i>About Us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-hospital mx-2"></i>Appointment</a>
@@ -109,10 +109,11 @@
       <div class="col-12 offset-lg-1 col-lg-10">
 
         <div class="row">
-
+          <!--  carousel images  Auto scrolling -->
 
           <div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
             <div class="carousel-inner ">
+
               <div class="carousel-item active">
                 <!-- <img src="images/img1.jpg" class="d-block w-100" alt="..."> -->
                 <div class="image-1-display">
@@ -121,6 +122,7 @@
                 </div>
                 </div>
               </div>
+
               <div class="carousel-item">
                 <!-- <img src="images/img2.jpg" class="d-block w-100" alt="..."> -->
                 <div class="image-2-display">
@@ -129,6 +131,7 @@
                 </div>
                 </div>
               </div>
+
               <div class="carousel-item">
                 <!-- <img src="images/img3.jpg" class="d-block w-100" alt="..."> -->
                 <div class="image-3-display">
@@ -137,6 +140,7 @@
                 </div>
                 </div>
               </div>
+
             </div>
           </div>
 
