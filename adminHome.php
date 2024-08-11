@@ -34,6 +34,7 @@
 
             <div class="col-10 col-lg-10 d-none " style="background-color: #eee; height:20vh" id="newsBox">
 
+<!-- menna me div eka athule latest news update tika hdnna -->
 
             </div>
 
