@@ -31,11 +31,43 @@ $resultset = Database::search("SELECT * FROM `appointment`");
 
             <div class="col-12 col-lg-12 mx-0 p-0" style="background-color:  #eee;">
 
-<div class="col-12 col-lg-12 mx-0 p-0 text-center text-white mt-2 my-2 p-3" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%)">
+                <div class="col-12 col-lg-12 mx-0 p-0 text-center text-white mt-2 my-2 p-3" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%)">
 
-<span class=" fs-3">Patient Appointment Details</span>
+                    <span class=" fs-3">Patient Appointment Details</span>
+
+                </div>
+
+                <div class="col-12 col-lg-12 text-center">
+
+                    <div class="row">
+
+                        <div class="col-12 col-lg-8">
+
+                           <div class="row">
+<div class="col-3">
+<input type="text" class=" form-control" placeholder="Doctor name">
 
 </div>
+
+<div class="col-3">
+<input type="date" class=" form-control">
+</div>
+
+<div class="col-1">
+<button class=" form-control"><i class="bi bi-search"></i></button>
+</div>
+                           </div>
+
+                        </div>
+                        <div class="col-12 col-lg-6">
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
 
 
                 <div class="col-12 col-lg-12 mx-0 p-0">
