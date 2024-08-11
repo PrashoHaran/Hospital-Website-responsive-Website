@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 <div class="row">
 
 <?php include "header.php"; ?>
-<hr class=" my-0">
+<hr class=" my-3">
 
 <div class="content-container offset-1">
         <div class="form-container">
@@ -28,11 +28,6 @@
                 <div class="form-group">
                     <label for="name">Full Name:</label>
                     <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
@@ -58,6 +53,23 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="Specialization">Select Specialization:</label>
+                    <select class="form-control" id="Specialization" name="Specialize" required>
+                        <option value="" disabled selected>Select a speciality</option>
+                        <option value="dr_ajith">Ayurvedic</option>
+                        <option value="dr_amila">Cardiologist</option>
+                        <option value="dr_ashen">Dermatologist</option>
+                        <option value="dr_bandara">EYE surgeon</option>
+                        <option value="dr_kumara">NEURO surgeon</option>
+                        <option value="dr_gaya">Physician</option>
+                        <option value="dr_indika">Ongologist</option>
+                        <option value="dr_janith">Psychiatrist</option>
+                        <option value="dr_rameez">Physiotherapy</option>
+                        <option value="dr_samantha">Venereologist</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="date">Preferred Date:</label>
                     <input type="date" class="form-control" id="date" name="date" required>
                 </div>
@@ -73,7 +85,7 @@
 
     </div>
 
-
+    <hr class=" my-3">
     <?php include "footer.php"; ?>
 
 
