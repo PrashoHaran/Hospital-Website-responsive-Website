@@ -26,16 +26,19 @@ background-color: bisque;
     height: 400px;
 }
 
+/*
 .header-text {
     width: 60%;
     height: 100%;
-    /* margin: 10px; */
+    /* margin: 10px; 
     padding-left: 48px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background-color: beige; */
+    /* background-color: beige; 
 }
+
+*/
 
 .header-title {
     font-size: 3rem;
@@ -58,55 +61,40 @@ background-color: bisque;
     font-weight: 500;
 }
 
-.speciality-category {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin: 2rem 0 1rem 0;
-}
-
 .speciality-card {
     border: 1px solid #fff;
-    width: 200px;
-    height: 80px;
-    padding: 1rem;
-    display: flex;
+height: 10vh;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     background-image: linear-gradient(to right bottom, #6bc1d1, #66bed8, #66bade, #6bb5e3, #74b0e6, #89b3e9, #9cb7eb, #acbbec, #c4caf0, #d9daf3, #ebebf7, #fcfcfc);
-    box-shadow: 10px 10px 5px #eee;
+   /* box-shadow: 10px 10px 5px #eee;*/
 }
-
+/*
 #our-story {
     background-color: #eee;
     display: flex;
 }
+*/
 
-.story-text {
-    width: 50%;
-    margin: 3rem 1rem 3rem 3rem;
-}
 
 .story-header {
     font-size: 2rem;
     font-weight: 500;
 }
-
+/*
 .story-body {
     line-height: 180%;
     margin-top: 1rem;
 }
+*/
 
-.story-image {
-    width: 50%;
-}
+.storyImage{
 
-.story-image img {
     width: 100%;
-    height: 100%;
+    height: 40vh;
 }
+
 
 .image-1-display {
     background-image: url("images/img1.jpg");
