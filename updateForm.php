@@ -37,7 +37,7 @@
 
                 <div class="mb-3">
                     <label for="image_path" class="form-label">Image Path:</label>
-                    <input type="text" id="image_path" name="image_path" class="form-control" required>
+                    <input type="file" id="image_path" name="image_path" class="form-control" required>
                 </div>
                 
                 <div class="mb-3">
