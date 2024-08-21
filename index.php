@@ -172,7 +172,7 @@
       </div>
 
 
-      <div class="col-12">
+      <div class="col-12 col-lg-12">
 
         <div class="col-12 text-primary text-center fs-1">
           Latest News
@@ -214,9 +214,12 @@
 
 
       <hr>
+      <div class="col-12">
       <?php include "footer.php"; ?>
+      </div>
+     
+      
     </div>
-
 
   </div>
 

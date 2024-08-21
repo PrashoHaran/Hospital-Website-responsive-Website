@@ -40,15 +40,7 @@
                     <select class="form-control" id="doctor" name="doctor" required>
                         <option value="" disabled selected>Select a doctor</option>
                         <option value="dr_ajith">Dr. Ajith Jayasekara</option>
-                        <option value="dr_amila">Dr. Amila Rathnapala</option>
-                        <option value="dr_ashen">Dr. Ashen Silva</option>
-                        <option value="dr_bandara">Dr. B.M.S Bandara</option>
-                        <option value="dr_kumara">Dr. D.S Kumara</option>
-                        <option value="dr_gaya">Dr. Gaya Bandara</option>
-                        <option value="dr_indika">Dr. Indika Jayalath</option>
-                        <option value="dr_janith">Dr. Janith Liyanage</option>
-                        <option value="dr_rameez">Dr. Rameez Raja</option>
-                        <option value="dr_samantha">Dr. Samantha</option>
+                       
                     </select>
                 </div>
 
@@ -57,15 +49,7 @@
                     <select class="form-control" id="Specialization" name="Specialize" required>
                         <option value="" disabled selected>Select a speciality</option>
                         <option value="dr_ajith">Ayurvedic</option>
-                        <option value="dr_amila">Cardiologist</option>
-                        <option value="dr_ashen">Dermatologist</option>
-                        <option value="dr_bandara">EYE surgeon</option>
-                        <option value="dr_kumara">NEURO surgeon</option>
-                        <option value="dr_gaya">Physician</option>
-                        <option value="dr_indika">Ongologist</option>
-                        <option value="dr_janith">Psychiatrist</option>
-                        <option value="dr_rameez">Physiotherapy</option>
-                        <option value="dr_samantha">Venereologist</option>
+                        
                     </select>
                 </div>
 
