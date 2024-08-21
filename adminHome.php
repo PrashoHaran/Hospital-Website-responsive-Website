@@ -27,7 +27,7 @@
             <div class="col-12 col-lg-12" id="appointmentBox">
                 <?php include "appointmentDetails.php"; ?>
 
-
+                <?php include "footer.php"; ?>
             </div>
 
             <!--Latest News update form -->
@@ -45,7 +45,7 @@
 
 
 
-            <?php include "footer.php"; ?>
+       
 
         </div>
     </div>
