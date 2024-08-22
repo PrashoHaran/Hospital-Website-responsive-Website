@@ -1,3 +1,12 @@
+<?php
+// Include the database connection
+include 'dbConnection.php';
+
+// Fetch card data from the database
+$sql = "SELECT card_id, title, text_content, image_path, last_updated FROM cards";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -179,44 +188,28 @@
       </div>
 
 
-      <div class="col-12 col-lg-12">
-
-        <div class="col-12 text-primary text-center fs-1">
-          Latest News
-        </div>
-
         <div class="col-12">
-
-          <div class="card-group">
-            <div class="card">
-              <img src="images/img4.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
+            <div class="card-group">
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        ?>
+                        <div class="card" id="<?php echo $row['card_id']; ?>">
+                            <img src="<?php echo $row['image_path']; ?>" class="card-img-top" alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row['title']; ?></h5>
+                                <p class="card-text"><?php echo $row['text_content']; ?></p>
+                                <p class="card-text"><small class="text-body-secondary">Last updated <?php echo $row['last_updated']; ?></small></p>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    echo "<p>No cards available.</p>";
+                }
+                ?>
             </div>
-            <div class="card">
-              <img src="images/img6.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/img7.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-
-
         </div>
-
       </div>
 
 
