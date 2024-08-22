@@ -1,3 +1,13 @@
+
+<?php
+
+require "connection.php";
+
+$resultset = Database::search("SELECT * FROM `specialization`");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +40,23 @@
 <select name="" id="" class=" form-select">
 
 <option value="" disabled selected>Select a speciality</option>
-<option value="">Ayurvedic</option>
-<option value="">Cardiologist</option>
+
+
+<?php 
+
+while ($row = mysqli_fetch_assoc($resultset)) {
+
+?>
+<option value=""><?php echo $row['specialization']; ?></option>
+
+
+<?php
+
+}
+?>
+
+
+
 
 </select>
 
