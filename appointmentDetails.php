@@ -2,11 +2,8 @@
 
 require "connection.php";
 
-$resultset = Database::search("SELECT * FROM `appointment`");
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,24 +38,50 @@ $resultset = Database::search("SELECT * FROM `appointment`");
 
                     <div class="row">
 
-                        <div class="col-12 col-lg-8">
+                        <div class="col-12 col-lg-12">
 
-                           <div class="row">
-<div class="col-3">
-<input type="text" class=" form-control" placeholder="Doctor name">
+                        <form action="" class=" form-control" method="POST">
+                            <div class="row">
 
-</div>
+                                <div class="col-4">
+                                    <input type="text" class=" form-control" placeholder="Doctor name" id="dName" name="dname">
 
-<div class="col-3">
-<input type="date" class=" form-control">
-</div>
+                                </div>
 
-<div class="col-1">
-<button class=" form-control"><i class="bi bi-search"></i></button>
-</div>
-                           </div>
+                                <div class="col-4">
+                                    <input type="date" class=" form-control" id="date" name="date">
+                                </div>
 
+                                <div class="col-2 col-lg-1">
+                                    <button class=" form-control" name="submit"><i class="bi bi-search"></i></button>
+                                </div>
+
+                               
+                            </div>
+                            </form>
                         </div>
+<?php 
+
+
+if(isset($_POST['submit'])){
+
+    $dName = $_POST['dname'];
+    $date = $_POST['date'];
+    
+    
+    $resultset = Database::search("SELECT * FROM `appointment` WHERE `doctor` LIKE '%".$dName."%' AND `date`='".$date."'");
+    
+    
+        }
+   if(!isset($_POST['submit'])){
+
+    $resultset = Database::search("SELECT * FROM `appointment`");
+
+   }     
+       
+
+?>
+
                         <div class="col-12 col-lg-6">
 
 

@@ -60,7 +60,7 @@ $result = $conn->query($sql);
                   <a class="nav-link active" aria-current="page" href="about.php"><i class="bi bi-info-circle mx-2"></i>About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="Appointment.php"><i class="bi bi-hospital mx-2"></i>Appointment</a>
+                  <a class="nav-link active" aria-current="page" href="AppointmentSearch.php"><i class="bi bi-hospital mx-2"></i>Appointment</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-file-earmark-text mx-2"></i>Lab Report</a>
@@ -115,7 +115,7 @@ $result = $conn->query($sql);
       </nav>
 
 
-      <div class="col-12 offset-lg-1 col-lg-10">
+      <div class="col-12 offset-lg-1 col-lg-10 mt-2">
 
         <div class="row">
           <!--  carousel images  Auto scrolling -->
@@ -124,43 +124,50 @@ $result = $conn->query($sql);
             <div class="carousel-inner ">
 
               <div class="carousel-item active">
-                <!-- <img src="images/img1.jpg" class="d-block w-100" alt="..."> -->
-                <div class="image-1-display">
+                
+                <img src="images/img1.jpg" class="d-block w-100" alt="..."> 
+
+              <!--  <div class="image-1-display">
                 <div class="image-1-text">
                   <div class="image-1-title">Where Healing Begins with Heart, Your Trusted Partner in Health</div>
                 </div>
-                </div>
+                </div>-->
+
               </div>
 
               <div class="carousel-item">
-                <!-- <img src="images/img2.jpg" class="d-block w-100" alt="..."> -->
-                <div class="image-2-display">
+                 <img src="images/img2.jpg" class="d-block w-100" alt="..."> 
+
+              <!--  <div class="image-2-display">
                 <div class="image-2-text">
                   <div class="image-2-title">Caring for the Community, Committed to You</div>
                 </div>
-                </div>
+                </div> -->
+
               </div>
 
               <div class="carousel-item">
-                <!-- <img src="images/img3.jpg" class="d-block w-100" alt="..."> -->
-                <div class="image-3-display">
+                <img src="images/img3.jpg" class="d-block w-100" alt="..."> 
+
+               <!-- <div class="image-3-display">
                 <div class="image-3-text">
                   <div class="image-3-title">Excellence in Healthcare, Every Day. Together for a Healthier Tomorrow!</div>
                 </div>
-                </div>
+                </div> -->
+
               </div>
 
             </div>
           </div>
 
-          <div class="col-12 " style="background-color: #E3F4CE;">
+          <div class="col-12 " >
 
            <div class="col-12 offset-lg-2 col-lg-8 mt-3 ">
 
           <div class="row">
 
 
-            <div class="card mb-3" style="max-width: 100%;">
+            <div class="card p-3 w-100" >
               <div class="row g-0">
                 <div class="col-md-4">
                   <img src="images/img5.jpg" class="img-fluid rounded-start" alt="...">
@@ -169,7 +176,7 @@ $result = $conn->query($sql);
                   <div class="card-body">
                     <h5 class="card-title">International Patient Care </h5>
                     <p class="card-text">Prime Care Hospital has a dedicated team to handle the care of international patients within the hospital. This includes coordinating not only the patient’s stay at the hospital and insurance coverage but also airport drop off and pickups as well as hotel accommodation. </p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    <p class="card-text"><small class="text-body-secondary"></small></p>
                   </div>
                 </div>
               </div>
@@ -180,13 +187,6 @@ $result = $conn->query($sql);
         </div>
       </div>
 
-
-      <div class="container-fluid">
-        <div class="row">
-          <hr class="my-0">
-            <div class="col-12 text-primary text-center fs-1">
-              Latest News
-            </div>
 
         <div class="col-12">
             <div class="card-group">
@@ -214,9 +214,12 @@ $result = $conn->query($sql);
 
 
       <hr>
-      <?php include "footer.php"; ?>
-    </div>
 
+      <?php include "footer.php"; ?>
+      
+     
+      
+    </div>
 
   </div>
 
