@@ -36,7 +36,7 @@
 
                 <!-- menna me div eka athule latest news update tika hdnna -->
 
-                <?php include "latestNews.php" ?>
+                <?php include "updateForm.php" ?>
 
             </div>
 

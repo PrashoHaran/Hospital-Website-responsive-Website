@@ -23,7 +23,7 @@ $resultset = Database::search("SELECT * FROM `specialization`");
 <?php include "header.php"; ?>
 <hr class=" my-0">
 
-
+<!--Select doctor Part -->
 <div class="col-6 col-lg-4 mt-4 mb-4 mx-lg-5">
 
 <select name="" id="" class=" form-select">
@@ -34,6 +34,8 @@ $resultset = Database::search("SELECT * FROM `specialization`");
 </select>
 
 </div>
+
+<!--Select speciality part -->
 
 <div class="col-6 col-lg-4 mt-4 mb-4">
 
@@ -55,13 +57,11 @@ while ($row = mysqli_fetch_assoc($resultset)) {
 }
 ?>
 
-
-
-
 </select>
 
 </div>
 
+<!--Searching Item Display part -->
 
 <div class=" col-12 col-lg-12">
 

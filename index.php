@@ -1,10 +1,12 @@
 <?php
 // Include the database connection
-include 'dbConnection.php';
+include 'connection.php';
 
 // Fetch card data from the database
-$sql = "SELECT card_id, title, text_content, image_path, last_updated FROM cards";
-$result = $conn->query($sql);
+//$sql = "SELECT card_id, title, text_content, image_path, last_updated FROM cards";
+
+
+$resultset = Database::search("SELECT card_id, title, text_content, image_path, last_updated FROM cards");
 ?>
 
 <!DOCTYPE html>
@@ -160,9 +162,9 @@ $result = $conn->query($sql);
             </div>
           </div>
 
-          <div class="col-12 " >
+         
 
-           <div class="col-12 offset-lg-2 col-lg-8 mt-3 ">
+           <div class="col-12 offset-lg-2 col-lg-8 mt-3 my-3">
 
           <div class="row">
 
@@ -185,14 +187,14 @@ $result = $conn->query($sql);
           </div>
 
         </div>
-      </div>
+    
 
 
         <div class="col-12">
             <div class="card-group">
                 <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
+                if ($resultset->num_rows > 0) {
+                    while ($row = $resultset->fetch_assoc()) {
                         ?>
                         <div class="card" id="<?php echo $row['card_id']; ?>">
                             <img src="<?php echo $row['image_path']; ?>" class="card-img-top" alt="Card image">

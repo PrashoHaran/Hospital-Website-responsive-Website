@@ -19,6 +19,9 @@ public static function iud($q){
 
     Database::setUpConnection();
     Database::$connection->query($q);
+   //$stmt = Database::$connection->prepare($q);
+
+
 }
 
 public static function search($q){
