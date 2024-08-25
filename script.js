@@ -88,3 +88,13 @@ function changeView2(){
      
 
 }
+
+//Doctor Form validation Part
+
+function doctorvalidate(){
+
+
+    
+}
+
+
