@@ -68,10 +68,15 @@ if(isset($_POST['submit'])){
     $dName = $_POST['dname'];
     $date = $_POST['date'];
     
-    
-    $resultset = Database::search("SELECT * FROM `appointment` WHERE `doctor` LIKE '%".$dName."%' AND `date`='".$date."'");
-    
-    
+    if($dName ==="" || $date ===""){
+        $resultset = Database::search("SELECT * FROM `appointment`");
+
+    }
+    else
+    {
+        $resultset = Database::search("SELECT * FROM `appointment` WHERE `doctor` LIKE '%".$dName."%' AND `date`='".$date."'");
+    }
+   
         }
    if(!isset($_POST['submit'])){
 
