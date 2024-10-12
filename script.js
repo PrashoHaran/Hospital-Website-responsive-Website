@@ -93,7 +93,32 @@ function changeView2(){
 
 function doctorvalidate(){
 
+    const dname = document.getElementById('dname').value.trim();
+    const nic = document.getElementById('nic').value.trim();
+    const email = document.getElementById('email').value.trim();
 
+    // Validate Doctor Name 
+    if (dname === "") {
+        alert("Please enter the Doctor's Name.");
+        return false;
+    }
+
+    // Validate NIC
+    const nicPattern = /^(\d{9}[VvXx]|\d{12})$/;
+    if (nic === "" || !nicPattern.test(nic)) {
+        alert("Please enter a valid NIC. It should be either 9 digits followed by V/v/X/x or 12 digits.");
+        return false;
+    }
+
+    // Validate Email (
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "" || !emailPattern.test(email)) {
+        alert("Please enter a valid Email address.");
+        return false;
+    }
+
+    // If all validations pass, return true
+    return true;
     
 }
 
