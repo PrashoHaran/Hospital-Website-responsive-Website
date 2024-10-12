@@ -74,7 +74,7 @@ if(isset($_POST['submit'])){
     }
     else
     {
-        $resultset = Database::search("SELECT * FROM `appointment` WHERE `doctor` LIKE '%".$dName."%' AND `date`='".$date."'");
+        $resultset = Database::search("SELECT * FROM `appointment` WHERE `doctor` LIKE '%".$dName."%' AND `aDate`='".$date."'");
     }
    
         }
@@ -124,7 +124,7 @@ if(isset($_POST['submit'])){
                                     <td> <?php echo $row['pName']; ?></td>
                                     <td> Dr.<?php echo $row['doctor']; ?></td>
                                     <td> <?php echo $row['appNum']; ?></td>
-                                    <td> <?php echo $row['date']; ?></td>
+                                    <td> <?php echo $row['aDate']; ?></td>
 
                             </tr>
                         <?php
