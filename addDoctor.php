@@ -50,7 +50,7 @@ $resultset = Database::search("SELECT * FROM `specialization`");
 <div class="col-4 my-2 mt-2 p-1" style=" background: rgb(238,174,202);
 background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); border-radius: 30px;">
 
-<form action="addDoctorProcess.php" method="post" class=" form-container mx-5">
+<form action="addDoctorProcess.php" method="post" class=" form-container mx-5" onsubmit="return doctorvalidate()">
 <!--Doctor Name -->
 <div class="col-12 ">
     <label for="dname" class=" form-label">Doctor Name</label>
@@ -66,6 +66,9 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
 <label for="email" class=" form-label">Email</label>
 <input type="text" name="email" id="email" placeholder=" Please Enter the Email" class=" form-control" required>
 </div>
+
+<button class="btn btn-dark" name="submit" type="submit">Submit</button>
+
 <!--Doctor Speciality -->
 <div class=" col-12">
 <label for="speciality" class=" form-label my-0">Select Speciality</label>
@@ -88,9 +91,11 @@ while ($row = mysqli_fetch_assoc($resultset)) {
 ?>
 
 </select>
+
 </div>
 <div class=" col-12 ">
-<button class=" btn btn-dark" name="submit" type="submit" onclick="doctorvalidate();">Submit</button>
+
+
 </div>
 
 </form>
