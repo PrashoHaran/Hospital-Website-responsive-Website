@@ -67,7 +67,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
 <input type="text" name="email" id="email" placeholder=" Please Enter the Email" class=" form-control" required>
 </div>
 
-<button class="btn btn-dark" name="submit" type="submit">Submit</button>
+
 
 <!--Doctor Speciality -->
 <div class=" col-12">
@@ -94,7 +94,7 @@ while ($row = mysqli_fetch_assoc($resultset)) {
 
 </div>
 <div class=" col-12 ">
-
+<button class="btn btn-dark" name="submit" type="submit" onclick="doctorvalidate();">Submit</button>
 
 </div>
 

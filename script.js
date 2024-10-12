@@ -1,20 +1,5 @@
 
-let pShow = document.getElementById("pShow");
-let password = document.getElementById("adminPassword");
 
-pShow.onclick = function() {
-
-  if (password.type == "password") {
-    password.type = "text";
-    pShow.src = "images/eye-fill.svg"
-
-  } else {
-
-    password.type = "password";
-    pShow.src = "images/eye-slash-fill.svg"
-  }
-
-}
 
 function adminSignIn(){
 
@@ -49,6 +34,21 @@ function adminSignIn(){
 }
 
 
+pShow.onclick = function() {
+    let pShow = document.getElementById("pShow");
+    let password = document.getElementById("adminPassword");
+    
+  if (password.type == "password") {
+    password.type = "text";
+    pShow.src = "images/eye-fill.svg"
+
+  } else {
+
+    password.type = "password";
+    pShow.src = "images/eye-slash-fill.svg"
+  }
+
+}
 
 function changeView1(){
 
@@ -98,7 +98,7 @@ function doctorvalidate(){
     const email = document.getElementById('email').value.trim();
 
     // Validate Doctor Name 
-    if (dname === "") {
+    if (dname == "") {
         alert("Please enter the Doctor's Name.");
         return false;
     }
