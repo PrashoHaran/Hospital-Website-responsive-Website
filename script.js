@@ -98,7 +98,7 @@ function doctorvalidate(){
     const email = document.getElementById('email').value.trim();
 
     // Validate Doctor Name 
-    if (dname == "") {
+    if (dname === "") {
         alert("Please enter the Doctor's Name.");
         return false;
     }

@@ -4,19 +4,11 @@ class Database {
 
     public static $connection;
 
-<<<<<<< HEAD
-    public static function setUpConnection(){
-    
-    if(!isset(Database::$connection)){
-    
-    Database::$connection =  new mysqli("localhost","root","","hospital","3307");
-    
-=======
     // Set up the database connection
     public static function setUpConnection() {
         if (!isset(Database::$connection)) {
             try {
-                Database::$connection = new mysqli("localhost", "root", "", "hospitalnew", "3306");
+                Database::$connection = new mysqli("localhost", "root", "", "hospital", "3307");
                 if (Database::$connection->connect_error) {
                     throw new Exception("Connection failed: " . Database::$connection->connect_error);
                 }
@@ -56,7 +48,6 @@ class Database {
         } catch (Exception $e) {
             die("Error retrieving data: " . $e->getMessage());
         }
->>>>>>> a9bb39bc7e5a10ab2a2d121a0b0074336e83594e
     }
 }
 
