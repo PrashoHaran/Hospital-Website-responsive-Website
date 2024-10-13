@@ -4,6 +4,44 @@ require "connection.php";
 
 $resultset1 = Database::search("SELECT * FROM `specialization`");
 
+
+// Function to get dates for the next 3 days
+function getNextThreeDays()
+{
+    $dates = [];
+    for ($i = 0; $i < 4; $i++) {
+        $dates[] = date('Y-m-d', strtotime("+$i day"));
+    }
+    return $dates;
+}
+
+// Get the dates and display them
+
+
+$appointment_count = null;
+
+// Check if form has been submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_POST['date'])) {
+    // Get doctor and date from the form
+    $doctor = $_POST['doctor'];
+    $aDate = $_POST['date'];
+   
+
+    // Query to count appointments for the selected doctor and date
+    $query = "SELECT COUNT(*) as appointment_count FROM appointment WHERE doctor LIKE '" . $doctor . "' AND aDate = '" . $aDate . "'";
+    $result = Database::search($query);
+
+    // Fetch the result and get the count
+    if ($row = $result->fetch_assoc()) {
+        $appointment_count = $row['appointment_count'];
+    } else {
+        $appointment_count = 0; // Default to 0 if no results found
+    }
+}
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,44 +61,121 @@ $resultset1 = Database::search("SELECT * FROM `specialization`");
 
             <?php include "header.php"; ?>
             <hr class="my-0">
-<div class=" col-12 ">
+            <div class=" col-12 ">
 
-<div class="row px-lg-5" style="background-image: linear-gradient(to right top, #010e01, #0c260d, #0c3e12, #0c5712, #0d720c);">
+                <div class="row px-lg-5 px-0" style="background-image: linear-gradient(to right top, #010e01, #0c260d, #0c3e12, #0c5712, #0d720c);">
 
- <!-- Select Speciality Part -->
- <div class=" col-6 col-lg-4 mt-0 mx-lg-5 px-lg-5">
+                    <!-- Select Speciality Part -->
 
-          <select name="speciality" id="speciality" class="form-select">
-                    <option value="" disabled selected>Select a speciality</option>
-                    <?php
-                    while ($row = mysqli_fetch_assoc($resultset1)) {
-                    ?>
-                        <option value="<?php echo $row['id']; ?>"><?php echo $row['specialization']; ?></option>
-                    <?php
-                    }
-                    ?>
-                </select>
-          </div>
 
-            <!-- Select Doctor Part -->
-            <div class="col-6 col-lg-4 mt-5 px-lg-5">
-                <select name="doctor" id="doctor" class="form-select">
-                    <option value="" disabled selected>Select Doctor</option>
-                </select>
+                    <form action="AppointmentSearch.php" method="POST" id="appointmentSearchForm">
+
+                        <div class="row">
+
+                            <div class=" col-6 col-lg-4 mt-0 mx-lg-4 mx-2 px-lg-5 my-0 p-0">
+
+                                <select name="speciality" id="speciality" class="form-select">
+                                    <option value="" disabled selected>Select a speciality</option>
+                                    <?php
+                                    while ($row = mysqli_fetch_assoc($resultset1)) {
+                                    ?>
+                                        <option value="<?php echo $row['id']; ?>"><?php echo $row['specialization']; ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <!-- Select Doctor Part -->
+                            <div class="col-5 col-lg-4 mt-5 px-lg-5 p-0">
+                                <select name="doctor" id="doctor" class="form-select">
+                                    <option value="" disabled selected>Select Doctor</option>
+                                </select>
+                            </div>
+
+                            <div class=" col-6 col-lg-3 mt-lg-5 my-sm-2 p-0 mx-2 px-lg-5">
+
+                                <select name="date" id="date" class=" form-select">
+                                    <option value="" disabled selected>Select a date</option>
+
+                                    <?php
+                                    $dates = getNextThreeDays();
+                                    foreach ($dates as $date) {
+
+                                    ?>
+                                        <option ><?php echo " $date "; ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+
+                            </div>
+
+
+                            <div class="d-flex col-5 col-lg-12  my-2 mt-0 justify-content-center">
+                                <button class=" btn btn-light col-lg-4" name="search" type="submit" id="searchBtn"><i class="bi bi-search"></i>Search</button>
+                            </div>
+
+
+                        </div>
+
+
+                </div>
+
             </div>
 
-</div>
-  
 
-</div>
+            </form>
+
+            <!-- Display the appointment count if form has been submitted -->
          
-            <!-- Searching Item Display Part -->
-            <div class="col-12 col-lg-12">
-                <!-- Add any additional content here -->
-            </div>
+                <div class="alert alert-info mt-3 my-0" id="resultDiv" style="display: none;">
+                    <strong>Appointment Count:</strong> <?php echo $appointment_count; ?>
+                </div>
+          
 
+
+
+            <!-- Searching Item Display Part -->
+            
+            <div class="col-12 col-lg-12 mt-0 p-0">
+                <!-- Warning message -->
+
+                <div class=" alertmessagdiv1 alert alert-warning text-center text-dark p-3  " id="alertDiv" style="display: none;">
+                    <strong>All Appointments are closed on this date.</strong>
+
+                </div>
+            </div>
+           
+
+             <!--Appointment making form -->
+
+<div class="col-12 d-flex justify-content-center" >
+
+<div class=" col-8 col-lg-4 mt-2 p-0 my-3" style=" background-color: #0c3e12; border-radius: 10px; display: none;" id="AppointmentForm">
+
+<form action="" method="POST">
+
+<div class=" col-12 p-0 mt-5 d-flex justify-content-center p-1"><input type="text" name="pName" id="pName" class=" form-control" placeholder="Patient Name With Initials"></div>
+<div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="email" name="email" id="email" class=" form-control" placeholder="Enter Your Email"></div>
+<div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="text" name="phone" id="phone" class=" form-control" placeholder="Enter your Phone Number"></div>
+<div class=" col-12 col-lg-4 p-1">
+    <select name="province" id="province" class=" form-control">
+        <option disabled selected>Select Your Province</option>
+    </select>
+</div>
+</form>
+
+</div>
+
+</div>
+
+
+<?php include "footer.php"; ?>
         </div>
     </div>
+
+
 
     <script>
         $(document).ready(function() {
@@ -72,7 +187,9 @@ $resultset1 = Database::search("SELECT * FROM `specialization`");
                 $.ajax({
                     url: "doctorSearching.php", // PHP file to fetch doctors
                     method: "POST",
-                    data: {special_id: special_id}, // Send selected specialization ID
+                    data: {
+                        special_id: special_id
+                    }, // Send selected specialization ID
                     success: function(data) {
                         $('#doctor').html(data); // Populate the doctor dropdown with the result
                     }
@@ -81,6 +198,51 @@ $resultset1 = Database::search("SELECT * FROM `specialization`");
         });
     </script>
 
+<script>
+    // jQuery AJAX function for form submission
+    $(document).ready(function() {
+        $('#appointmentSearchForm').on('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the values from the form
+            var doctor = $('#doctor').val();
+            var date = $('#date').val();
+
+            // Send AJAX request to AppointmentCount.php
+            $.ajax({
+                url: 'AppointmentCount.php',
+                method: 'POST',
+                data: {
+                    doctor: doctor,
+                    date: date
+                },
+                success: function(response) {
+                    // Parse the JSON response
+                    var data = JSON.parse(response);
+                    var appointmentCount = data.count;
+
+                    // Show the result in the resultDiv
+                    $('#resultDiv').html('There are ' + appointmentCount + ' appointment(s) for the selected doctor and date.');
+                    $('#resultDiv').show();
+
+                    // Check if the appointment count is greater than 3, then show the alert div
+                    if (appointmentCount > 2) {
+                        $('#alertDiv').show();  // Show the alert div
+                        $('#AppointmentForm').hide();
+                    } else {
+                        $('#alertDiv').hide();  // Hide the alert div if the count is 3 or less
+                        $('#AppointmentForm').show();
+                    }
+                },
+                error: function() {
+                    alert('Error fetching appointment data.');
+                }
+            });
+        });
+    });
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

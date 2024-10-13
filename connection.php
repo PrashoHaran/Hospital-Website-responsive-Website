@@ -4,18 +4,6 @@ class Database {
 
     public static $connection;
 
-    // Set up the database connection
-    public static function setUpConnection() {
-        if (!isset(Database::$connection)) {
-            try {
-                Database::$connection = new mysqli("localhost", "root", "", "hospitalnew", "3306");
-                if (Database::$connection->connect_error) {
-                    throw new Exception("Connection failed: " . Database::$connection->connect_error);
-                }
-            } catch (Exception $e) {
-                die("Database connection error: " . $e->getMessage());
-            }
-        }
     }
 
     // Insert, Update, Delete (IUD) queries

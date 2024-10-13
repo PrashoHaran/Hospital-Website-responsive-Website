@@ -64,6 +64,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                             </form>
                         </div>
+<
                     </div>
                 </div>
 
@@ -88,6 +89,7 @@ if (isset($_POST['submit'])) {
                                     <td> Dr.<?php echo $row['doctor']; ?></td>
                                     <td> <?php echo $row['appNum']; ?></td>
                                     <td> <?php echo $row['aDate']; ?></td>
+
                             </tr>
                                 <?php
                                 }
