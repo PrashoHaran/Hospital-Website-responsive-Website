@@ -32,7 +32,10 @@ $resultset = Database::search("SELECT * FROM `specialization`");
         </div>
         <hr class="my-2">
 
-        <div class="col-4 my-2 mt-2 p-1" style="background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); border-radius: 30px;">
+
+        <div class=" col-12 d-flex justify-content-center">
+
+        <div class="col-8 col-lg-4 my-2 mt-2 p-1" style="background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); border-radius: 30px;">
             <form action="addDoctorProcess.php" method="post" class="form-container mx-5" onsubmit="return doctorvalidate()">
                 <!-- Doctor Name -->
                 <div class="col-12">
@@ -62,6 +65,9 @@ $resultset = Database::search("SELECT * FROM `specialization`");
                 <button class="btn btn-dark" name="submit" type="submit">Submit</button>
             </form>
         </div>
+
+        </div>
+     
         <?php include "footer.php"; ?>
     </div>
 </div>
