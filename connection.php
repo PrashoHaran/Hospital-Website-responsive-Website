@@ -4,7 +4,6 @@ class Database {
 
     public static $connection;
 
-<<<<<<< HEAD
     // Set up the database connection
     public static function setUpConnection() {
         if (!isset(Database::$connection)) {
@@ -17,8 +16,6 @@ class Database {
                 die("Database connection error: " . $e->getMessage());
             }
         }
-=======
->>>>>>> a48474dfc393521eb8b6e1576d303e564f059026
     }
 
     // Insert, Update, Delete (IUD) queries
