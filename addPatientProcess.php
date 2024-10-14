@@ -12,7 +12,6 @@ $date = $_POST['date'];
 try {
     // Prepare SQL query
     $query = "INSERT INTO patient (pName, nic, pEmail, pPhoneNumber, gender, date) VALUES (?, ?, ?, ?, ?, ?)";
-    
     Database::iud($query, [$name, $nic, $email, $phone, $gender, $date], "ssssss");
 
 

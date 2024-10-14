@@ -6,7 +6,6 @@ function adminSignIn(){
     var adminEmail = document.getElementById("adminEmail");
     var adminPassword = document.getElementById("adminPassword");
 
-
     var f = new FormData();
     f.append("e", adminEmail.value);
     f.append("p", adminPassword.value);
@@ -241,6 +240,7 @@ if(pName !== "" && nic !== "" && email !== "" && phone !== "" && gender !== "" &
 }
 
 }
+<<<<<<< HEAD
 
 //Patient Registration Form
 // Clear Form Function
@@ -385,3 +385,5 @@ document.getElementById("patientForm").addEventListener("submit", function(event
     });
 });
 
+=======
+>>>>>>> 5cb20e45d91dba79254fe4b9fc554fccc2af8457

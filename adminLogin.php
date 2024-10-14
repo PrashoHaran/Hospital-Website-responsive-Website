@@ -13,8 +13,14 @@
     <div class="row">
       <?php include "header.php"; ?>
       <hr class="my-0">
+<<<<<<< HEAD
       <div class="col-12" style="background-color: #d3ffd3;">
         <div class="offset-lg-4 col-lg-4 offset-2 col-8 offset-md-4 col-md-4 mt-5 my-5" style="background-color: #a6ffa6; border-radius: 20px;">
+=======
+      <div class="col-12" >
+
+        <div class="offset-lg-4 col-lg-4 offset-2 col-8 offset-md-4 col-md-4 mt-5 my-5" style=" background-image: linear-gradient(to right top, #f3f3f3, #f0f1f5, #ecf0f7, #e5eff9, #ddeffa); border-radius: 10px; box-shadow: 0 0 15px rgba(45, 0, 65, 0.2);">
+>>>>>>> 5cb20e45d91dba79254fe4b9fc554fccc2af8457
           <div class="row">
             <div class="col-12 text-center text-primary fs-1">
               <p>Admin Login</p>
@@ -32,7 +38,11 @@
                     <input type="password" class="form-control" id="adminPassword" name="p" required>
                   </div>
 
+<<<<<<< HEAD
                   <div class="col-1 mt-3 align-content-center">
+=======
+                  <div class="col-1 a align-content-center">
+>>>>>>> 5cb20e45d91dba79254fe4b9fc554fccc2af8457
                     <img src="images/eye-slash-fill.svg" alt="" id="pShow">
                   </div>
                 </div>
