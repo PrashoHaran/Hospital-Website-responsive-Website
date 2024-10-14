@@ -65,7 +65,7 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
                   <a class="nav-link active" aria-current="page" href="AppointmentSearch.php"><i class="bi bi-hospital mx-2"></i>Appointment</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-file-earmark-text mx-2"></i>Lab Report</a>
+                  <a class="nav-link active" aria-current="page" href="labreport.php"><i class="bi bi-file-earmark-text mx-2"></i>Lab Report</a>
                 </li>
                 <!--   <li class="nav-item">
               <a class="nav-link" href="#">Link</a>

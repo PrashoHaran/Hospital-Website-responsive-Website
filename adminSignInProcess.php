@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows == 1) {
             // Success: Redirect to admin dashboard
-            header("Location: admin_dashboard.php"); // Redirect to the admin dashboard
+            header("Location: adminHome.php"); // Redirect to the admin dashboard
             exit();
         } else {
             echo "Invalid Username or Password";
