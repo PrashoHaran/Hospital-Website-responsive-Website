@@ -257,3 +257,25 @@ h1 {
   font-variation-settings:
     "wdth" 100;
 }
+
+@font-face{
+    font-family: "Honey";
+src: url("font/HoneyScript-Light.ttf");
+}
+
+@font-face{
+    font-family: "Leiko-Regular";
+src: url("font/Leiko-Regular.ttf");
+}
+
+@font-face{
+    font-family: "Tropikal-Bold";
+src: url("font/Tropikal-Bold.ttf");
+}
+
+.headName{
+    font-family: "Leiko-Regular";
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #024184;
+}

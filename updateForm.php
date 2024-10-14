@@ -16,7 +16,7 @@
 
     <!-- Bootstrap container for centering -->
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="col-md-6 p-0">
+        <div class="col-lg-6 p-0" >
             <h1 class="text-center my-0 mt-0">Update Card</h1>
 
             <form action="updateCard.php" method="POST" enctype="multipart/form-data">

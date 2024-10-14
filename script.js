@@ -6,7 +6,6 @@ function adminSignIn(){
     var adminEmail = document.getElementById("adminEmail");
     var adminPassword = document.getElementById("adminPassword");
 
-
     var f = new FormData();
     f.append("e", adminEmail.value);
     f.append("p", adminPassword.value);
