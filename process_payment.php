@@ -3,6 +3,33 @@
 session_start();
 require_once 'connection.php';
 
+
+
+    $pName = $_POST["pName"];
+    $nic =  $_POST["nic"];
+    $email =  $_POST["email"];
+    $phone =  $_POST["phone"];
+    $gender = $_POST["gender"];
+    $doctor =  $_POST["doctor"];
+    $date =  $_POST["date"];
+    $appNum = "";
+    
+    $query = "SELECT COUNT(*) as appointment_count FROM appointment WHERE doctor LIKE '%" . $doctor . "%' AND aDate = '" . $date . "'";
+    $result = Database::search($query);
+    if ($row = $result->fetch_assoc()) {
+        $appointment_count = $row['appointment_count'];
+    } else {
+        $appointment_count = 0; // Set count to 0 if no results
+    }
+    $appointment_count += 1;
+    
+    $appNum = $appointment_count;
+    
+   
+    
+    
+    
+
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -123,8 +150,14 @@ if ($payment_method == 'Credit/Debit Card') {
         exit();
     }
 
+    $query = "INSERT INTO appointment (email, pName, nic, doctor, phoneNumber, appNum, aDate) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    
+    Database::iud($query, [$email, $pName, $nic, $doctor, $phone, $appNum, $date], "sssssss");
+    
+    echo "success";
+
     $_SESSION['payment_success'] = "Payment Successful! Transaction ID: $transaction_id";
-    header("Location: payment.php");
+    header("Location: AppointmentSearch.php");
     exit();
 
 } elseif ($payment_method == 'PayPal') {
@@ -139,7 +172,9 @@ if ($payment_method == 'Credit/Debit Card') {
 } else {
     // For Insurance and Bank Transfer, mark as 'Pending'
     $_SESSION['payment_success'] = "Payment recorded! Your payment is being processed. Transaction ID: $transaction_id";
-    header("Location: payment.php");
+
+
+    header("Location: appointmentSearch.php");
     exit();
 }
 ?>
