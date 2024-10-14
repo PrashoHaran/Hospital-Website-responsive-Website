@@ -9,6 +9,7 @@ class Database {
         if (!isset(Database::$connection)) {
             try {
                 Database::$connection = new mysqli("localhost", "root", "", "hospital", "3307");
+
                 if (Database::$connection->connect_error) {
                     throw new Exception("Connection failed: " . Database::$connection->connect_error);
                 }
