@@ -318,6 +318,7 @@ document.getElementById("patientForm").addEventListener("submit", function(event
     });
 });
 
+
 //update Patient
 function updatePatient() {
     const formData = new FormData(document.getElementById("patientForm"));
