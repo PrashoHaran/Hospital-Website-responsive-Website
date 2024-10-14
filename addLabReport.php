@@ -29,7 +29,7 @@
 
 <div class=" col-12 d-flex justify-content-center">
 
-<div class=" col-lg-4 col-8 my-5 border-2" style=" background-image: linear-gradient(to right top, #f3f3f3, #f0f1f5, #ecf0f7, #e5eff9, #ddeffa); border-radius: 10px; box-shadow: 0 0 15px rgba(45, 0, 65, 0.2);;" >
+<div class=" col-lg-4 col-8 my-5 border-2" style=" background-image: linear-gradient(to right top, #f3f3f3, #f0f1f5, #ecf0f7, #e5eff9, #ddeffa); border-radius: 10px; box-shadow: 0 0 15px rgba(45, 0, 65, 0.2);" >
 
 <div class=" col-12 d-flex justify-content-center my-2" >
 <img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class=" col-lg-2 col-4">

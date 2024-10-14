@@ -119,17 +119,17 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
       <div style="background-image: linear-gradient(to right top, #f3f3f3, #f4f4f5, #f4f6f8, #f4f7fa, #f4f9fc);">
 
-        <div class="col-12 offset-lg-1 col-lg-10 mt-2">
+        <div class="col-12 offset-lg-1 col-lg-10 mt-2" >
 
           <div class="row">
             <!--  carousel images  Auto scrolling -->
 
-            <div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
-              <div class="carousel-inner ">
+            <div id="carouselExampleSlidesOnly" class="carousel slide p-0" data-bs-ride="carousel" style="  box-shadow: 0 0 15px rgba(45, 0, 65, 0.2);">
+              <div class="carousel-inner p-0">
 
-                <div class="carousel-item active">
+                <div class="carousel-item active p-0">
 
-                  <img src="images/img1.jpg" class="d-block w-100" alt="...">
+                  <img src="images/img1.jpg" class="d-block w-100" alt="..." >
 
                   <!--  <div class="image-1-display">
                 <div class="image-1-text">
