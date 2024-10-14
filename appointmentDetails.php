@@ -74,6 +74,7 @@ if (isset($_POST['submit'])) {
                             <tr class="table-success">
                                 <th scope="col">Email Address</th>
                                 <th scope="col">Patient Name</th>
+                                <th scope="col">Patient NIC</th>
                                 <th scope="col">Doctor</th>
                                 <th scope="col">Appointment Number</th>
                                 <th scope="col">Appointment Date</th>
@@ -86,6 +87,7 @@ if (isset($_POST['submit'])) {
                                 ?>
                                     <td> <?php echo $row['email']; ?></td>
                                     <td> <?php echo $row['pName']; ?></td>
+                                    <td> <?php echo $row['nic']; ?></td>
                                     <td> Dr.<?php echo $row['doctor']; ?></td>
                                     <td> <?php echo $row['appNum']; ?></td>
                                     <td> <?php echo $row['aDate']; ?></td>
