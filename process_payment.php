@@ -4,26 +4,48 @@ session_start();
 require_once 'connection.php';
 
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST["pName"]) && isset($_POST["nic"]) && isset($_POST["email"]) &&
+        isset($_POST["phone"]) && isset($_POST["gender"]) && isset($_POST["doctor"]) &&
+        isset($_POST["date"])) {
 
-    $pName = $_POST["pName"];
-    $nic =  $_POST["nic"];
-    $email =  $_POST["email"];
-    $phone =  $_POST["phone"];
-    $gender = $_POST["gender"];
-    $doctor =  $_POST["doctor"];
-    $date =  $_POST["date"];
-    $appNum = "";
+        $pName = $_POST["pName"];
+        $nic = $_POST["nic"];
+        $email = $_POST["email"];
+        $phone = $_POST["phone"];
+        $gender = $_POST["gender"];
+        $doctor = $_POST["doctor"];
+        $date = $_POST["date"];
+
+        // Rest of the code here
+
+        $appNum = "";
     
-    $query = "SELECT COUNT(*) as appointment_count FROM appointment WHERE doctor LIKE '%" . $doctor . "%' AND aDate = '" . $date . "'";
-    $result = Database::search($query);
-    if ($row = $result->fetch_assoc()) {
-        $appointment_count = $row['appointment_count'];
+        $query = "SELECT COUNT(*) as appointment_count FROM appointment WHERE doctor LIKE '%" . $doctor . "%' AND aDate = '" . $date . "'";
+        $result = Database::search($query);
+        if ($row = $result->fetch_assoc()) {
+            $appointment_count = $row['appointment_count'];
+        } else {
+            $appointment_count = 0; // Set count to 0 if no results
+        }
+        $appointment_count += 1;
+        
+        $appNum = $appointment_count;
+
+        $query = "INSERT INTO appointment (email, pName, nic, doctor, phoneNumber, appNum, aDate) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    
+        Database::iud($query, [$email, $pName, $nic, $doctor, $phone, $appNum, $date], "sssssss");
+        
+        echo "success";
+    
+
     } else {
-        $appointment_count = 0; // Set count to 0 if no results
+        echo "Error: Missing form inputs.";
     }
-    $appointment_count += 1;
-    
-    $appNum = $appointment_count;
+} else {
+    echo "No form data received.";
+}
+
     
    
     
@@ -150,12 +172,7 @@ if ($payment_method == 'Credit/Debit Card') {
         exit();
     }
 
-    $query = "INSERT INTO appointment (email, pName, nic, doctor, phoneNumber, appNum, aDate) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    
-    Database::iud($query, [$email, $pName, $nic, $doctor, $phone, $appNum, $date], "sssssss");
-    
-    echo "success";
-
+  
     $_SESSION['payment_success'] = "Payment Successful! Transaction ID: $transaction_id";
     header("Location: AppointmentSearch.php");
     exit();

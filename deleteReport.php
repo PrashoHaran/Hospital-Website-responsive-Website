@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .error, .success {
             padding: 10px;
             margin-bottom: 15px
-            border-radius: 3px;
+        
         }
         .error {
             background-color: #f8d7da;
