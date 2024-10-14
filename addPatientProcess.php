@@ -14,8 +14,6 @@ try {
     $query = "INSERT INTO patient (pName, nic, pEmail, pPhoneNumber, gender, date) VALUES (?, ?, ?, ?, ?, ?)";
     Database::iud($query, [$name, $nic, $email, $phone, $gender, $date], "ssssss");
 
-
-    // Success message and redirect
     echo "<script>alert('Patient registered successfully');</script>";
     header("Location: PatientRegistration.php"); // Redirect to Patient Registration Page
     exit();
