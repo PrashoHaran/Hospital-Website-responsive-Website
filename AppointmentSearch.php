@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
                                     foreach ($dates as $date) {
 
                                     ?>
-                                        <option ><?php echo " $date "; ?></option>
+                                        <option><?php echo " $date "; ?></option>
                                     <?php
                                     }
                                     ?>
@@ -150,86 +150,85 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
 
             <!--Appointment making form -->
 
-<div class="col-12 d-flex justify-content-center" >
+            <div class="col-12 d-flex justify-content-center">
 
                 <div class=" col-8 col-lg-4 mt-2 p-3 my-3" style=" background-color: #0c3e12; border-radius: 10px; display: none;" id="AppointmentForm">
 
-                    <form action="" method="POST">
 
-                        <div class=" col-12 p-0 mt-5 d-flex justify-content-center p-1"><input type="text" name="pName" id="pName" class=" form-control" placeholder="Patient Name With Initials"></div>
-                        <div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="text" name="nic" id="nic" class=" form-control" placeholder="Patient NIC"></div>
-                        <div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="email" name="email" id="email" class=" form-control" placeholder="Enter Your Email"></div>
-                        <div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="text" name="phone" id="phone" class=" form-control" placeholder="Enter your Phone Number"></div>
+                        <div class=" col-12 p-0 mt-5 d-flex justify-content-center p-1"><input type="text" name="pName" id="pName" class=" form-control" placeholder="Patient Name With Initials" required></div>
+                        <div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="text" name="nic" id="nic" class=" form-control" placeholder="Patient NIC" required></div>
+                        <div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="email" name="email" id="email" class=" form-control" placeholder="Enter Your Email" required></div>
+                        <div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="text" name="phone" id="phone" class=" form-control" placeholder="Enter your Phone Number" required></div>
 
-<div class=" col-12 col-lg-6 p-1">
-    <select name="gender" id="gender" class=" form-select">
-                                    <option disabled selected>Select Patient Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
+                        <div class=" col-12 col-lg-6 p-1">
+                            <select name="gender" id="gender" class=" form-select" required>
+                                <option disabled selected>Select Patient Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
 
 
-<div class=" col-12 p-1 mt-1">
+                        <div class=" col-12 p-1 mt-1">
 
-<select name="speciality2" id="speciality2" class=" form-select">
-    <option disabled selected>Select the speciality</option>
+                            <select name="speciality2" id="speciality2" class=" form-select" required>
+                                <option disabled selected>Select the speciality</option>
 
-<?php
-                                    while ($row = mysqli_fetch_assoc($resultset2)) {
-                                    ?>
-                                        <option value="<?php echo $row['id']; ?>"><?php echo $row['specialization']; ?></option>
-                                    <?php
-                                    }
-                                    ?>
+                                <?php
+                                while ($row = mysqli_fetch_assoc($resultset2)) {
+                                ?>
+                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['specialization']; ?></option>
+                                <?php
+                                }
+                                ?>
 
-</select>
+                            </select>
 
-</div>
+                        </div>
 
-<div class=" col-12 p-1 mt-1">
+                        <div class=" col-12 p-1 mt-1">
 
-<select name="doctor2" id="doctor2" class="form-select">
-                                    <option value="" disabled selected>Select Doctor</option>
-                                </select>
+                            <select name="doctor2" id="doctor2" class="form-select" required>
+                                <option value="" disabled selected>Select Doctor</option>
+                            </select>
 
-</div>
+                        </div>
 
-<div class=" col-12 p-1 mt-1 my-2">
+                        <div class=" col-12 p-1 mt-1 my-2">
 
-<select name="date2" id="date2" class=" form-select">
-                                    <option value="" disabled selected>Select a date</option>
+                            <select name="date2" id="date2" class=" form-select" required>
+                                <option value="" disabled selected>Select a date</option>
 
-                                    <?php
-                                    $dates = getNextThreeDays();
-                                    foreach ($dates as $date) {
+                                <?php
+                                $dates = getNextThreeDays();
+                                foreach ($dates as $date) {
 
-                                    ?>
-                                        <option ><?php echo " $date "; ?></option>
-                                    <?php
-                                    }
-                                    ?>
-                                </select>
+                                ?>
+                                    <option><?php echo " $date "; ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
 
-</div>
+                        </div>
 
-<div class=" col-12 d-flex justify-content-center mt-5 my-3">
+                        <div class=" col-12 d-flex justify-content-center mt-5 my-3">
 
-<button class=" col-4 p-1 btn btn-secondary btn-sm ">Confirm Appointment</button>
+                            <button class=" col-4 p-1 btn btn-secondary btn-sm " onclick="appointmentValidate();">Confirm Appointment</button>
 
-</div>
+                        </div>
 
-                    </form>
+            
 
                 </div>
 
             </div>
 
-<div class=" col-12 p-0 " style=" margin-top: 30vh;">
-<?php include "footer.php"; ?>
-</div>
-                
+            <div class=" col-12 p-0 " style=" margin-top: 30vh;">
+                <?php include "footer.php"; ?>
             </div>
+
+        </div>
     </div>
 
 
@@ -255,7 +254,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
         });
     </script>
 
-<script>
+    <script>
         $(document).ready(function() {
             // When the specialization dropdown value changes
             $('#speciality2').change(function() {
@@ -276,26 +275,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
         });
     </script>
 
-<script>
-        $(document).ready(function() {
-            // When the specialization dropdown value changes
-            $('#speciality').change(function() {
-                var special_id = $(this).val(); // Get the selected specialization ID
 
-                // Send AJAX request to fetch doctors based on specialization
-                $.ajax({
-                    url: "doctorSearching.php", // PHP file to fetch doctors
-                    method: "POST",
-                    data: {
-                        special_id: special_id
-                    }, // Send selected specialization ID
-                    success: function(data) {
-                        $('#doctor').html(data); // Populate the doctor dropdown with the result
-                    }
-                });
-            });
-        });
-    </script>
 
     <script>
         // jQuery AJAX function for form submission
@@ -340,7 +320,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
             });
         });
     </script>
-
+<script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
