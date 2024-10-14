@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="col-3 col-lg-3">
-                   <a href="http://" class="link-opacity-50-hover link-underline-light"><i class="bi bi-file-earmark-text mx-5 mx-lg-2"></i>Lab Report</a>
+                   <a href="labreport.php" class="link-opacity-50-hover link-underline-light"><i class="bi bi-file-earmark-text mx-5 mx-lg-2"></i>Lab Report</a>
                     </div>
 
                  
