@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -20,8 +24,13 @@
 
         <div class="row ">
 
-            <div class="col-12 col-lg-6 align-self-start mt-3 my-3">
-                <p>PRIME CARE HOSPITAL</p>
+<div class=" col-lg-2 col-4">
+
+<img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class="col-5">
+
+</div>
+            <div class="col-8 col-lg-4 mt-4">
+                <p class=" fs-lg-2 fs-3 noto-serif-headName">PRIME CARE HOSPITAL</p>
             </div>
 
             <div class="col-12 col-lg-6 align-self-end my-4">
