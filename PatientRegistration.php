@@ -99,7 +99,7 @@
                 <form id="patientForm" class="p-4 border rounded" action="addPatientProcess.php" method="POST">
                 
                     <div class="text-center mb-3">
-                        <img src="images/regsiter.jpg" alt="Doctor with patient" class="form-image">
+                        <img src="images/regsiterr.jpg" alt="Doctor with patient" class="form-image">
                     </div>
 
                     <h3 class="mb-3">Patient Registration Form</h3>
@@ -172,7 +172,8 @@
     <?php include "footer.php"; ?>
 
     <script src="script.js"></script>
-    
+
+
 </body>
 
 </html>

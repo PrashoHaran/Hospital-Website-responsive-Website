@@ -240,3 +240,142 @@ if(pName !== "" && nic !== "" && email !== "" && phone !== "" && gender !== "" &
 }
 
 }
+
+//Validating Patient form
+
+function clearForm() {
+    document.getElementById("patientForm").reset(); 
+    document.getElementById("responseMessage").innerText = ""; 
+}
+
+// JavaScript Validation Function
+function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const nic = document.getElementById("nic").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const date = document.getElementById("date").value;
+
+    
+    const nameRegex = /^[a-zA-Z\s]{2,}$/; 
+    const nicRegex = /^(?:\d{9}[Vv]|\d{12})$/; 
+    const phoneRegex = /^\d{10}$/; 
+
+    
+    if (!nameRegex.test(name)) {
+        alert("Please enter a valid patient name (Add atleast 4 characters!).");
+        return false;
+    }
+
+    
+    if (!nicRegex.test(nic)) {
+        alert("Please enter a valid NIC (9 digits followed by 'V' or 12 digits).");
+        return false;
+    }
+
+    
+    if (!phoneRegex.test(phone)) {
+        alert("Please enter a valid phone number (10 digits).");
+        return false;
+    }
+
+    
+    if (date === "") {
+        alert("Date is required.");
+        return false;
+    }
+
+    return true; 
+}
+
+function insertPatient() {
+    if (validateForm()) {
+
+        document.getElementById("responseMessage").innerText = "Patient registered successfully!";
+    }
+}
+
+//Connecting frontend to backend
+document.getElementById("patientForm").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    var formData = new FormData(this); 
+
+    fetch('addPatientProcess.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            alert(data.message); 
+            document.getElementById("patientForm").reset(); 
+        } else {
+            alert(data.message); 
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred while submitting the form."); 
+    });
+});
+
+
+
+//update Patient
+function updatePatient() {
+    const formData = new FormData(document.getElementById("patientForm"));
+    
+    fetch('updatePatientProcess.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            alert(data.message); 
+        } else {
+            alert(data.message); 
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred while updating the patient details.");
+    });
+}
+
+//delete Patient
+function deletePatient() {
+    const nic = document.getElementById("nic").value; 
+
+    if (!nic) {
+        alert("Please enter NIC to delete the patient record");
+        return;
+    }
+
+    const confirmDelete = confirm("Are you sure you want to delete this patient's record?");
+    if (!confirmDelete) {
+        return; 
+    }
+
+    const formData = new FormData();
+    formData.append('nic', nic);
+
+    fetch('deletePatientProcess.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())  
+    .then(data => {
+        if (data.status === "success") {
+            alert(data.message); 
+            document.getElementById("patientForm").reset(); 
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred while trying to delete the patient record: " + error.message);
+    });
+}
+
+

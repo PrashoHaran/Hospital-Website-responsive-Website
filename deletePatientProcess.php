@@ -1,14 +1,12 @@
 <?php
-require 'connection.php'; // Include your database connection file
+require 'connection.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nic = $_POST['nic'];
 
     try {
-        // Prepare SQL query to delete the patient by NIC
         $query = "DELETE FROM patient WHERE nic = ?";
         
-        // Execute the query using your Database class
         Database::iud($query, [$nic], "s");
 
         // Return success response

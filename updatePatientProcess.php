@@ -1,15 +1,13 @@
 <?php
-require 'connection.php'; // Include your database connection file
+require 'connection.php'; 
 
 // Get form data
 $nic = $_POST['nic'];
 $name = $_POST['name'];
 
 try {
-    // Prepare SQL query to update the patient name based on NIC
     $query = "UPDATE patient SET pName = ? WHERE nic = ?";
-    
-    // Execute the query using the Database class
+
     Database::iud($query, [$name, $nic], "ss");
 
     // Return success message

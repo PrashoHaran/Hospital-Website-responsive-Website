@@ -1,5 +1,5 @@
 <?php
-require 'connection.php'; // Include your database connection file
+require 'connection.php';
 
 // Get form data
 $name = $_POST['name'];
