@@ -33,7 +33,7 @@
                     <input type="password" class="form-control" id="adminPassword" name="p" required>
                   </div>
 
-                  <div class="col-1 mt-3 align-content-center">
+                  <div class="col-1 a align-content-center">
                     <img src="images/eye-slash-fill.svg" alt="" id="pShow">
                   </div>
                 </div>
@@ -50,6 +50,8 @@
       <?php include "footer.php"; ?>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

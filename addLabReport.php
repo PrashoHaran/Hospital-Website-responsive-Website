@@ -40,7 +40,7 @@
 <div class="col-12 d-flex justify-content-center">
 
 <div class="col-6"><input type="text" name="refSearch" id="refSearch" class=" form-control" placeholder="Enter the Reference Number"></div>
-<div class="col-2"><button class="form-control" name="submit"><i class="bi bi-search"></i></button></div>
+<div class="col-2 mx-1"><button class="form-control" name="submit"><i class="bi bi-search"></i></button></div>
 </div>
 
 <div class=" col-12 p-1"><input type="text" name="refNo" id="refNo" class=" form-control" placeholder="Please Enter the Reference Number"> </div>
