@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         Database::iud($query, [$nic], "s");
 
-        // Return success response
         echo json_encode(['status' => 'success', 'message' => 'Patient record deleted successfully']);
     } catch (Exception $e) {
         echo json_encode(['status' => 'error', 'message' => 'Error: ' . $e->getMessage()]);

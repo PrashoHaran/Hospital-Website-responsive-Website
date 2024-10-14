@@ -13,8 +13,9 @@ try {
     // Return success message
     echo json_encode(["status" => "success", "message" => "Patient details updated successfully."]);
 } catch (Exception $e) {
-    
+
     // Return error message
     echo json_encode(["status" => "error", "message" => "Error: " . $e->getMessage()]);
 }
+
 ?>
