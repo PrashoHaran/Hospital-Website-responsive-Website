@@ -241,3 +241,147 @@ if(pName !== "" && nic !== "" && email !== "" && phone !== "" && gender !== "" &
 }
 
 }
+
+//Patient Registration Form
+// Clear Form Function
+function clearForm() {
+    document.getElementById("patientForm").reset(); 
+    document.getElementById("responseMessage").innerText = ""; 
+}
+
+// JavaScript Validation Function
+function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const nic = document.getElementById("nic").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const date = document.getElementById("date").value;
+
+    const nameRegex = /^[a-zA-Z\s]{2,}$/; 
+    const nicRegex = /^(?:\d{9}[Vv]|\d{12})$/; 
+    const phoneRegex = /^\d{10}$/; 
+
+    // Validate Patient Name
+    if (!nameRegex.test(name)) {
+        alert("Please enter a valid patient name (Add atleast 4 characters).");
+        return false;
+    }
+
+    // Validate NIC
+    if (!nicRegex.test(nic)) {
+        alert("Please enter a valid NIC (9 digits followed by 'V' or 12 digits).");
+        return false;
+    }
+
+    // Validate Phone Number
+    if (!phoneRegex.test(phone)) {
+        alert("Please enter a valid phone number (10 digits).");
+        return false;
+    }
+
+    // Validate Date
+    if (date === "") {
+        alert("Date is required.");
+        return false;
+    }
+
+    return true; 
+}
+
+// Insert Patient Function
+function insertPatient() {
+    if (validateForm()) {
+        document.getElementById("responseMessage").innerText = "Patient registered successfully!";
+    }
+}
+
+// Update Patient Function
+function updatePatient() {
+    const formData = new FormData(document.getElementById("patientForm"));
+    
+    fetch('updatePatientProcess.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            alert(data.message); // Success message
+        } else {
+            alert(data.message); // Error message
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred while updating the patient details.");
+    });
+}
+
+// Delete Patient Function
+function deletePatient() {
+    const nic = document.getElementById("nic").value; // Get the NIC value from the form
+
+    if (!nic) {
+        alert("Please enter NIC to delete the patient record");
+        return;
+    }
+
+    // Confirm with the user before deleting
+    const confirmDelete = confirm("Are you sure you want to delete this patient's record?");
+    if (!confirmDelete) {
+        return; // If user cancels, do nothing
+    }
+
+    // Create form data with NIC
+    const formData = new FormData();
+    formData.append('nic', nic);
+
+    // Send DELETE request using fetch
+    fetch('deletePatientProcess.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            alert(data.message); // Show success alert
+            document.getElementById("patientForm").reset(); // Clear the form
+        } else {
+            alert(data.message); // Show error message
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred while trying to delete the patient record.");
+    });
+}
+
+
+//Connecting Front-end and Back-end
+document.getElementById("patientForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    var formData = new FormData(this); // Gather form data
+
+    fetch('addPatientProcess.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.status === "success") {
+            alert(data.message); // Show success alert
+            document.getElementById("patientForm").reset(); // Reset the form
+        } else {
+            alert(data.message); // Show error alert
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred while submitting the form."); // Generic error alert
+    });
+});
+
