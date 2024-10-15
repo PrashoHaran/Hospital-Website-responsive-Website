@@ -26,19 +26,11 @@
 
 <div class=" col-lg-2 col-4">
 
-<<<<<<< HEAD
-<img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class="col-5">
-
-</div>
-            <div class="col-8 col-lg-4 mt-4">
-                <p class=" fs-lg-2 fs-3 noto-serif-headName">PRIME CARE HOSPITAL</p>
-=======
 <img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class="col-9 col-lg-5">
 
 </div>
             <div class="col-8 col-lg-4 mt-4">
                 <p class=" headName fs-3 ">PRIME CARE HOSPITAL</p>
->>>>>>> 5cb20e45d91dba79254fe4b9fc554fccc2af8457
             </div>
 
             <div class="col-12 col-lg-6 align-self-end my-4">

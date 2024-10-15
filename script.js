@@ -261,7 +261,7 @@ function appointmentValidate() {
 }
 
 
-}
+
 
 //Validating Patient form
 
@@ -400,4 +400,13 @@ function deletePatient() {
 }
 
 
+function doctorUpdate(){
+
+var dName = document.getElementById("dName").value;
+var nic = document.getElementById("dnic").value;
+var email = document.getElementById("email").value;
+
+alert(dName);
+
+}
 
