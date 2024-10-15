@@ -3,13 +3,13 @@ require 'connection.php';
 
 $resultset = Database::search("SELECT * FROM `specialization`");
 
-
+$docnic = "";
+$dName = "";
+$dEmail = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $dnic = $_POST["dnic"];
-    $docnic = "";
-    $dName = "";
-    $dEmail = "";
+
 
 $rs = Database::search("SELECT d.dName, d.dEmail, s.specialization ,d.special_id
         FROM doctor d
@@ -24,6 +24,7 @@ while ($row = mysqli_fetch_assoc($rs)){
   
     $specialization = $row['specialization'];
 
+    $special_id = $row['special_id'];
 
 }
 
@@ -78,7 +79,7 @@ else{
 
             <div class=" col-12 d-flex justify-content-center">
 
-                <div class="col-8 col-lg-4 my-4 mt-2 p-0" style="background-image: linear-gradient(to right top, #f3f3f3, #ebedf6, #dee8f8, #cde4fa, #b7e1fa); border-radius: 30px;">
+                <div class="col-10 col-lg-4 my-4 mt-2 p-0" style="background-image: linear-gradient(to right top, #f3f3f3, #ebedf6, #dee8f8, #cde4fa, #b7e1fa); border-radius: 30px;">
 
                     <div class="col-12 d-flex justify-content-center">
                         <p class=" headDoctor">Doctor Registration Form</p>
@@ -92,7 +93,7 @@ else{
                        
 </form>
                     </div>
-                    <form action="addDoctorProcess.php" method="post" class="form-container mx-5" onsubmit="return doctorvalidate()">
+                    <form action="addDoctorProcess.php" method="post" class="form-container mx-5" onsubmit="return doctorvalidate();">
                         <!-- Doctor Name -->
                         <div class="col-12">
                             <label for="dname" class="form-label">Doctor Name</label>
@@ -116,14 +117,14 @@ else{
 
                                 <?php while ($row = mysqli_fetch_assoc($resultset)) { ?>
 
-                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['specialization']; ?></option>
+                                    <option value="<?php echo $row['id']; ?>" <?php echo ($row['id'] == $special_id) ? 'selected' : ''; ?> ><?php echo $row['specialization']; ?></option>
                                 <?php } ?>
 
                             </select>
                         </div>
                         <button class="btn btn-dark col-3 mx-3" name="add" type="submit">Add Doctor</button>
                         <button class="btn btn-dark col-3 mx-2" name="update" type="button" onclick="doctorUpdate();">Update Doctor</button>
-                        <button class="btn btn-dark col-3 mx-3" name="delete" type="submit">Delete Doctor</button>
+                        <button class="btn btn-dark col-3 mx-3" name="delete" type="button" onclick="deleteDoctor();">Delete Doctor</button>
                     </form>
                    
                 </div>
