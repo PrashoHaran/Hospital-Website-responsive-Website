@@ -27,16 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
     $aDate = $_POST['date'];
 
 
-    // Query to count appointments for the selected doctor and date
-    $query = "SELECT COUNT(*) as appointment_count FROM appointment WHERE doctor LIKE '" . $doctor . "' AND aDate = '" . $aDate . "'";
-    $result = Database::search($query);
 
-    // Fetch the result and get the count
-    if ($row = $result->fetch_assoc()) {
-        $appointment_count = $row['appointment_count'];
-    } else {
-        $appointment_count = 0; // Default to 0 if no results found
-    }
+   // Query to count appointments for the selected doctor and date
+   $query = "SELECT COUNT(*) as appointment_count FROM appointment WHERE doctor LIKE '" . $doctor . "' AND aDate = '" . $aDate . "'";
+   $result = Database::search($query);
+
+   // Fetch the result and get the count
+   if ($row = $result->fetch_assoc()) {
+       $appointment_count = $row['appointment_count'];
+   } else {
+       $appointment_count = 0; // Default to 0 if no results found
+   }
+
+
+
+ 
 }
 
 
