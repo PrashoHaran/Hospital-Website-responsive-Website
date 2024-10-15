@@ -101,11 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            padding: 30px;
-        }
+       
         .container {
             max-width: 700px;
             margin: auto;
@@ -140,7 +136,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <div class="container">
+<div class="container-fluid">
+<div class="row ">
+<?php include "header.php"; ?>
+<hr class="my-1">
+
+<div class="col-12 p-0 mx-2 mt-2">
+                <div class="col-2">
+                    <button class="btn btn-dark p-2" onclick="window.location.href='adminHome.php';">
+                        <i class="bi bi-arrow-left-square-fill col-1 mx-1"></i>Back
+                    </button>
+                </div>
+            </div>
+
+<div class="container">
         <h2 class="text-center mb-4">Patient Registration Manager</h2>
         <div class="text-center">
             <button class="btn btn-add" onclick="showForm('addForm')">Add Patient</button>
@@ -160,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php } ?>
 
         <!-- Add Patient Form -->
-        <div id="addForm" class="form-container">
+        <div id="addForm" class="form-container offset-4">
             <h4>Add New Patient</h4>
             <form method="POST" action="PatientRegistration.php">
                 <div class="form-group">
@@ -206,7 +215,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <!-- Update Patient Form -->
-        <div id="updateForm" class="form-container">
+        <div id="updateForm" class="form-container offset-4">
             <h4>Update Patient</h4>
             <form method="POST" action="PatientRegistration.php">
                 <div class="form-group">
@@ -256,7 +265,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <!-- Delete Patient Form -->
-        <div id="deleteForm" class="form-container">
+        <div id="deleteForm" class="form-container offset-4 ">
             <h4>Delete Patient</h4>
             <form method="POST" action="PatientRegistration.php">
                 <div class="form-group">
@@ -268,6 +277,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
     </div>
+
+
+
+
+ 
+</div>
+</div>
+
+   
 
     <script>
         // Function to show the appropriate form

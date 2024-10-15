@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 
         <div class="row">
             <div class="col-12 col-lg-12 mx-0 p-0" style="background-color:  #eee;">
-                <div class="col-12 col-lg-12 mx-0 p-0 text-center text-white mt-2 my-2 p-3" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%)">
+                <div class="col-12 col-lg-12 mx-0 p-0 text-center text-white mt-2 my-2 p-3" style="background-image: linear-gradient(to right top, #002652, #033768, #054a7f, #055d96, #0071ad);">
                     <span class=" fs-3">Patient Appointment Details</span>
                 </div>
 

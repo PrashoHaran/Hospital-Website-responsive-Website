@@ -125,12 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab Report Manager</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
+      
         .container {
             width: 50%;
             margin: 50px auto;
@@ -227,6 +222,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
+
+<div class="container-fluid">
+<div class="row">
+
+<?php include "header.php"; ?>
+
+<div class="col-12 p-0 mx-2 mt-2">
+                <div class="col-2">
+                    <button class="btn btn-dark p-2" onclick="window.location.href='adminHome.php';">
+                        <i class="bi bi-arrow-left-square-fill col-1 mx-1"></i>Back
+                    </button>
+                </div>
+            </div>
+
 <div class="container">
     <h2>Lab Report Manager</h2>
 
@@ -286,6 +295,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 </div>
+
+
+
+</div>
+</div>
+
 
 </body>
 </html>
