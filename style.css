@@ -295,4 +295,7 @@ src: url("font/Tropikal-Bold.ttf");
     color: #024184;
 }
 
-
+.appointment_header{
+    font-family: "Leiko-Regular";
+   
+}
