@@ -402,11 +402,87 @@ function deletePatient() {
 
 function doctorUpdate(){
 
-var dName = document.getElementById("dName").value;
-var nic = document.getElementById("dnic").value;
+var dName = document.getElementById("dname").value;
+var nic = document.getElementById("nic").value;
 var email = document.getElementById("email").value;
-
+var speciality = document.getElementById("speciality").value;
+/*
 alert(dName);
+alert(nic);
+alert(email);
+alert(speciality);
+*/
+
+var f = new FormData();
+
+f.append("dName", dName);
+f.append("nic", nic);
+f.append("email", email);
+f.append("speciality", speciality);
+
+var r = new XMLHttpRequest();
+
+r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+        var t = r.responseText;
+        if (t == "success") {
+         
+            alert("Details have been successfully updated.");
+            
+            document.getElementById("dname").value = "";
+            document.getElementById("nic").value = "";
+            document.getElementById("dnic").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("speciality").value = "";
+
+        } else {
+            
+            alert(t);
+        }
+
+    }
+};
+
+r.open("POST", "doctorUpdateProcess.php", true);
+r.send(f);
+
+
+}
+
+function deleteDoctor(){
+
+    var nic = document.getElementById("nic").value;
+   // alert(nic);
+
+    var f = new FormData();
+    f.append("nic", nic);
+
+    var r = new XMLHttpRequest();
+
+
+r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+        var t = r.responseText;
+        if (t == "success") {
+         
+            alert("Details have been successfully Deleted.");
+            
+            document.getElementById("dname").value = "";
+            document.getElementById("nic").value = "";
+            document.getElementById("dnic").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("speciality").value = "";
+
+        } else {
+            
+            alert(t);
+        }
+
+    }
+};
+
+r.open("POST", "doctorDeleteProcess.php", true);
+r.send(f);
 
 }
 
