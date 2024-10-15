@@ -17,14 +17,14 @@
 <div class="row">
 
 
-<footer class=" bg-dark text-white">
+<footer class="text-white" style="background-image: linear-gradient(to right top, #010552, #0d1b72, #173193, #1b48b6, #1760da);">
 
 <div class="container text-center">
 
     <div class="row text-sm-center">
 
         <div class="col-12 col-md-3 col-lg-3 mx-auto mt-3">
-            <h5 class="text-warning">PRIME CARE HOSPITAL</h5>
+            <h5 class="text-uppercase text-white">PRIME CARE HOSPITAL</h5>
             <p>Here we are the primcecarehospital.lk&trade; to support you for maintain your health </p>
 
         </div>
@@ -75,7 +75,7 @@
 
         <div class="col-12 col-md-3 col-lg-3 mx-auto mt-3">
 
-            <h5 class="text-uppercase text-warning mb-4">Contact Us</h5>
+            <h5 class="text-uppercase text-white mb-4">Contact Us</h5>
 
             <p><i class="bi bi-house-fill"></i> Maradana, Colombo 10, Sri Lanka</p>
             <p><i class="bi bi-at"></i> primecarehospital@gmail.com</p>

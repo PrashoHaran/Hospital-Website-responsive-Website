@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
             <hr class="my-0">
             <div class=" col-12 ">
 
-                <div class="row px-lg-5 px-0" style="background-image: linear-gradient(to right top, #010e01, #0c260d, #0c3e12, #0c5712, #0d720c);">
+                <div class="row px-lg-5 px-0" style="background-image: linear-gradient(to right top, #020437, #082a62, #124f8e, #1877bc, #1aa2ea);">
 
                     <!-- Select Speciality Part -->
 

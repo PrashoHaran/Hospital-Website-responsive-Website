@@ -166,7 +166,7 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
 
 
-            <div class="col-12 offset-lg-2 col-lg-8 mt-3 my-3">
+            <div class="col-12 offset-lg-2 col-lg-8 mt-3 my-2">
 
               <div class="row">
 
@@ -192,7 +192,7 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
 
 
-            <div class="col-12">
+            <div class="col-12 my-4">
               <div class="card-group">
                 <?php
                 if ($resultset->num_rows > 0) {
