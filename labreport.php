@@ -89,10 +89,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <h1>Prime Care Hospital</h1>
                             </div>
                             <div class="col-12 d-flex justify-content-center fs-6">
-                                <p style="font-size: 10px;">No. 40, Waliwita, Malabe, Sri Lanka.</p>
+                                <p style="font-size: 10px;">Maradana, Colombo 10, Sri Lanka</p>
                             </div>
                             <div class="col-12 d-flex justify-content-center fs-6">
-                                <p style="font-size: 10px;">Hotline: +94 11 255 8800 | Laboratory: +94 11 255 8899</p>
+                                <p style="font-size: 10px;">Hotline: +94112 4445558 | Laboratory: +94112 4445558</p>
                             </div>
                             <div class="col-12 d-flex justify-content-center fs-6">
                                 <p style="font-size: 10px;">Email: info@primecarehospital.com | Web: www.primecarehospital.com</p>

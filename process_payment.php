@@ -42,9 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Error: Missing form inputs.";
     }
-} else {
-    echo "No form data received.";
-}
 
     
    
@@ -172,18 +169,33 @@ if ($payment_method == 'Credit/Debit Card') {
         exit();
     }
 
-  
+  /*
     $_SESSION['payment_success'] = "Payment Successful! Transaction ID: $transaction_id";
-    header("Location: AppointmentSearch.php");
+    header("Location: appointmentRecite.php");
+    exit();*/
+
+
+    $url = "appointmentRecite.php?pName=" . urlencode($pName) .
+           "&nic=" . urlencode($nic) .
+           "&email=" . urlencode($email) .
+           "&phone=" . urlencode($phone) .
+           "&gender=" . urlencode($gender) .
+           "&doctor=" . urlencode($doctor) .
+           "&date=" . urlencode($date) .
+           "&appNum=" . urlencode($appNum) .
+           "&transaction_id=" . urlencode($transaction_id);
+
+    header("Location: $url");
     exit();
 
-} elseif ($payment_method == 'PayPal') {
+}
+ elseif ($payment_method == 'PayPal') {
     // Redirect to PayPal for actual payment processing
     // **IMPORTANT:** Replace the URL with your actual PayPal integration endpoint.
     // For demonstration, we'll simulate redirection.
 
     $_SESSION['payment_success'] = "Redirecting to PayPal for payment...";
-    header("Location: payment.php");
+    header("Location: appointmentRecite.php");
     exit();
 
 } else {
@@ -191,7 +203,14 @@ if ($payment_method == 'Credit/Debit Card') {
     $_SESSION['payment_success'] = "Payment recorded! Your payment is being processed. Transaction ID: $transaction_id";
 
 
-    header("Location: appointmentSearch.php");
+    header("Location: aappointmentRecite.php");
     exit();
 }
+
+
+} else {
+    echo "No form data received.";
+
+}
+
 ?>

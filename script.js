@@ -212,6 +212,8 @@ function appointmentValidate() {
         alert("Please Select Date");
     }
 
+else{
+
 
     if (pName !== "" && nic !== "" && email !== "" && phone !== "" && gender !== "" && speciality2 !== "" && doctor2 !== "" && date2 !== "") {
 
@@ -256,6 +258,8 @@ function appointmentValidate() {
         }
 
     }
+
+}
 
 }
 
