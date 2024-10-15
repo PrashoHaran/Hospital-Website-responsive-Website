@@ -110,6 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             max-width: 700px;
             margin: auto;
         }
+
         .btn {
             padding: 10px 20px;
             margin: 5px;
@@ -135,6 +136,66 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         .error { background-color: #dc3545; }
         .success { background-color: #28a745; }
+
+
+       
+        .form-image {
+            width: 100%; 
+            height: auto; 
+            max-height: 200px; 
+            object-fit: cover; 
+            margin-bottom: 15px; 
+            border-radius: 10px; 
+        }
+
+       
+        .required {
+            color: red; 
+        }
+
+        
+        .form-group {
+            margin-bottom: 15px; 
+        }
+
+        
+        label {
+            font-weight: bold; 
+            display: block; 
+            margin-bottom: 5px; 
+        }
+       
+        .form-buttons {
+            text-align: center; 
+        }
+
+        .form-buttons button {
+            min-width: 120px; 
+            padding: 10px 15px; 
+            margin: 5px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease; 
+        }
+
+        .form-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        
+        .radio-group {
+            margin-bottom: 15px; 
+        }
+
+        
+        h3 {
+            text-align: center; 
+            color: #333; 
+        }
+
     </style>
 </head>
 
@@ -186,6 +247,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label><input type="radio" name="gender" value="female"> Female</label>
                         <label><input type="radio" name="gender" value="other"> Other</label>
                     </div>
+
                 </div>
                 <div class="form-group">
                     <label>Marital Status:</label>
@@ -194,6 +256,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label><input type="radio" name="marital_status" value="married"> Married</label>
                         <label><input type="radio" name="marital_status" value="divorced"> Divorced</label>
                         <label><input type="radio" name="marital_status" value="widowed"> Widowed</label>
+
+
+                    <div class="row">
+                        <div class="col-md-6 radio-group">
+                            <label>Gender:<span class="required">*</span></label>
+                            <div>
+                                <label><input type="radio" name="gender" value="male" required> Male</label>
+                                <label><input type="radio" name="gender" value="female"> Female</label>
+                                <label><input type="radio" name="gender" value="other"> Other</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 radio-group">
+                            <label>Marital Status:<span class="required">*</span></label>
+                            <div>
+                                <label><input type="radio" name="marital_status" value="single" required> Single</label>
+                                <label><input type="radio" name="marital_status" value="married"> Married</label>
+                                <label><input type="radio" name="marital_status" value="divorced"> Divorced</label>
+                                <label><input type="radio" name="marital_status" value="widowed"> Widowed</label>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="form-group">

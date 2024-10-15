@@ -17,11 +17,11 @@
 
             <div class="col-12 col-lg-12 pt-1 px-0 text-light mx-0 p-0" style="background-color: #12492f;">
 
-                <button class=" col-3 btn btn-light text-light btn-btn-outline-light my-2" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%);" onclick="changeView1();">Appointment Details</button>
-                <button class=" col-3 btn btn-light text-light btn-btn-outline-light my-2" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%);" onclick="changeView2();">Latest News Update</button>
-                <button class=" col-3 btn btn-light text-light btn-btn-outline-light my-2" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%);" onclick="window.location.href='addDoctor.php';">Add Doctor</button>
+                <button class=" col-2 btn btn-light text-light btn-btn-outline-light my-2" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%);" onclick="changeView1();">Appointment Details</button>
+                <button class=" col-2 btn btn-light text-light btn-btn-outline-light my-2" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%);" onclick="changeView2();">Latest News Update</button>
+                <button class=" col-2 btn btn-light text-light btn-btn-outline-light my-2" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%);" onclick="window.location.href='addDoctor.php';">Add Doctor</button>
                 <button class=" col-2 btn btn-light text-light btn-btn-outline-light my-2" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%);" onclick="window.location.href='addLabReport.php';">Add Lab Report</button>
-
+                <button class=" col-2 btn btn-light text-light btn-btn-outline-light my-2" style="background:  linear-gradient(90deg, rgba(25,158,9,1) 0%, rgba(13,37,14,1) 50%, rgba(22,170,13,1) 100%);" onclick="window.location.href='PatientRegistration.php';">Add Patient Button</button>
             </div>
 
             <!-- Appointment Details page import to admin home page-->

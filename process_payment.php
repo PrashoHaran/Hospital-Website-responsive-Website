@@ -3,6 +3,52 @@
 session_start();
 require_once 'connection.php';
 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST["pName"]) && isset($_POST["nic"]) && isset($_POST["email"]) &&
+        isset($_POST["phone"]) && isset($_POST["gender"]) && isset($_POST["doctor"]) &&
+        isset($_POST["date"])) {
+
+        $pName = $_POST["pName"];
+        $nic = $_POST["nic"];
+        $email = $_POST["email"];
+        $phone = $_POST["phone"];
+        $gender = $_POST["gender"];
+        $doctor = $_POST["doctor"];
+        $date = $_POST["date"];
+
+        // Rest of the code here
+
+        $appNum = "";
+    
+        $query = "SELECT COUNT(*) as appointment_count FROM appointment WHERE doctor LIKE '%" . $doctor . "%' AND aDate = '" . $date . "'";
+        $result = Database::search($query);
+        if ($row = $result->fetch_assoc()) {
+            $appointment_count = $row['appointment_count'];
+        } else {
+            $appointment_count = 0; // Set count to 0 if no results
+        }
+        $appointment_count += 1;
+        
+        $appNum = $appointment_count;
+
+        $query = "INSERT INTO appointment (email, pName, nic, doctor, phoneNumber, appNum, aDate) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    
+        Database::iud($query, [$email, $pName, $nic, $doctor, $phone, $appNum, $date], "sssssss");
+        
+        echo "success";
+    
+
+    } else {
+        echo "Error: Missing form inputs.";
+    }
+
+    
+   
+    
+    
+    
+
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -123,23 +169,48 @@ if ($payment_method == 'Credit/Debit Card') {
         exit();
     }
 
+  /*
     $_SESSION['payment_success'] = "Payment Successful! Transaction ID: $transaction_id";
-    header("Location: payment.php");
+    header("Location: appointmentRecite.php");
+    exit();*/
+
+
+    $url = "appointmentRecite.php?pName=" . urlencode($pName) .
+           "&nic=" . urlencode($nic) .
+           "&email=" . urlencode($email) .
+           "&phone=" . urlencode($phone) .
+           "&gender=" . urlencode($gender) .
+           "&doctor=" . urlencode($doctor) .
+           "&date=" . urlencode($date) .
+           "&appNum=" . urlencode($appNum) .
+           "&transaction_id=" . urlencode($transaction_id);
+
+    header("Location: $url");
     exit();
 
-} elseif ($payment_method == 'PayPal') {
+}
+ elseif ($payment_method == 'PayPal') {
     // Redirect to PayPal for actual payment processing
     // **IMPORTANT:** Replace the URL with your actual PayPal integration endpoint.
     // For demonstration, we'll simulate redirection.
 
     $_SESSION['payment_success'] = "Redirecting to PayPal for payment...";
-    header("Location: payment.php");
+    header("Location: appointmentRecite.php");
     exit();
 
 } else {
     // For Insurance and Bank Transfer, mark as 'Pending'
     $_SESSION['payment_success'] = "Payment recorded! Your payment is being processed. Transaction ID: $transaction_id";
-    header("Location: payment.php");
+
+
+    header("Location: aappointmentRecite.php");
     exit();
 }
+
+
+} else {
+    echo "No form data received.";
+
+}
+
 ?>

@@ -13,6 +13,8 @@ function adminSignIn() {
 
     var r = new XMLHttpRequest();
 
+
+
     r.open("POST", "adminSignInProcess.php", true);
     r.send(f);
 
@@ -210,6 +212,8 @@ function appointmentValidate() {
         alert("Please Select Date");
     }
 
+else{
+
 
     if (pName !== "" && nic !== "" && email !== "" && phone !== "" && gender !== "" && speciality2 !== "" && doctor2 !== "" && date2 !== "") {
 
@@ -257,7 +261,13 @@ function appointmentValidate() {
 
 }
 
+}
+
+
+
+
 //Validating Patient form
+
 function clearForm() {
     document.getElementById("patientForm").reset(); 
     document.getElementById("responseMessage").innerText = ""; 
@@ -270,6 +280,7 @@ function validateForm() {
     const phone = document.getElementById("phone").value.trim();
     const date = document.getElementById("date").value;
 
+    
     const nameRegex = /^[a-zA-Z\s]{2,}$/; 
     const nicRegex = /^(?:\d{9}[Vv]|\d{12})$/; 
     const phoneRegex = /^\d{10}$/; 
@@ -280,6 +291,7 @@ function validateForm() {
         return false;
     }
 
+    
     if (!nicRegex.test(nic)) {
         alert("Please enter a valid NIC (9 digits followed by 'V' or 12 digits).");
         return false;
@@ -351,7 +363,6 @@ function updatePatient() {
         console.error('Error:', error);
         alert("An error occurred while updating the patient details.");
     });
-
 }
 
 //delete Patient
@@ -391,4 +402,89 @@ function deletePatient() {
 }
 
 
+function doctorUpdate(){
+
+var dName = document.getElementById("dname").value;
+var nic = document.getElementById("nic").value;
+var email = document.getElementById("email").value;
+var speciality = document.getElementById("speciality").value;
+/*
+alert(dName);
+alert(nic);
+alert(email);
+alert(speciality);
+*/
+
+var f = new FormData();
+
+f.append("dName", dName);
+f.append("nic", nic);
+f.append("email", email);
+f.append("speciality", speciality);
+
+var r = new XMLHttpRequest();
+
+r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+        var t = r.responseText;
+        if (t == "success") {
+         
+            alert("Details have been successfully updated.");
+            
+            document.getElementById("dname").value = "";
+            document.getElementById("nic").value = "";
+            document.getElementById("dnic").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("speciality").value = "";
+
+        } else {
+            
+            alert(t);
+        }
+
+    }
+};
+
+r.open("POST", "doctorUpdateProcess.php", true);
+r.send(f);
+
+
+}
+
+function deleteDoctor(){
+
+    var nic = document.getElementById("nic").value;
+   // alert(nic);
+
+    var f = new FormData();
+    f.append("nic", nic);
+
+    var r = new XMLHttpRequest();
+
+
+r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+        var t = r.responseText;
+        if (t == "success") {
+         
+            alert("Details have been successfully Deleted.");
+            
+            document.getElementById("dname").value = "";
+            document.getElementById("nic").value = "";
+            document.getElementById("dnic").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("speciality").value = "";
+
+        } else {
+            
+            alert(t);
+        }
+
+    }
+};
+
+r.open("POST", "doctorDeleteProcess.php", true);
+r.send(f);
+
+}
 

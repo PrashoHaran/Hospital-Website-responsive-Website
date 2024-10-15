@@ -166,7 +166,7 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
 
 
-            <div class="col-12 offset-lg-2 col-lg-8 mt-3 my-3">
+            <div class="col-12 offset-lg-2 col-lg-8 mt-3 my-2">
 
               <div class="row">
 
@@ -192,7 +192,7 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
 
 
-            <div class="col-12">
+            <div class="col-12 my-4">
               <div class="card-group">
                 <?php
                 if ($resultset->num_rows > 0) {
@@ -218,6 +218,42 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
 
    
+    <!-- Welcome Div -->
+    <div id="welcomeDiv" class="welcome-overlay " style="display: none;" onclick="hideWelcomeMessage()">
+        <div class="welcome-message ">
+        <button class="close-btn" onclick="hideWelcomeMessage()">×</button>
+        <div class="col-12 d-flex justify-content-center"><img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class="col-lg-4 col-4"></div>
+            <h1>Welcome to Prime Care Hospital</h1>
+            <p>Your health, our priority.</p>
+        </div>
+    </div>
+
+   
+
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+     
+        function hideWelcomeMessage() {
+            $('#welcomeDiv').fadeOut(); // Fade out the welcome div
+            localStorage.setItem('welcomeMessageSeen', 'true'); // Set seen in localStorage
+        }
+
+       
+        $(document).ready(function() {
+          
+            var welcomeMessageSeen = localStorage.getItem('welcomeMessageSeen');
+
+            if (!welcomeMessageSeen) {
+                $('#welcomeDiv').show(); // Show welcome div
+
+                setTimeout(function() {
+                    hideWelcomeMessage(); // Hide and mark as seen
+                }, 6000);
+            }
+        });
+    </script>
 
 
         </div>

@@ -27,16 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
     $aDate = $_POST['date'];
 
 
-    // Query to count appointments for the selected doctor and date
-    $query = "SELECT COUNT(*) as appointment_count FROM appointment WHERE doctor LIKE '" . $doctor . "' AND aDate = '" . $aDate . "'";
-    $result = Database::search($query);
 
-    // Fetch the result and get the count
-    if ($row = $result->fetch_assoc()) {
-        $appointment_count = $row['appointment_count'];
-    } else {
-        $appointment_count = 0; // Default to 0 if no results found
-    }
+   // Query to count appointments for the selected doctor and date
+   $query = "SELECT COUNT(*) as appointment_count FROM appointment WHERE doctor LIKE '" . $doctor . "' AND aDate = '" . $aDate . "'";
+   $result = Database::search($query);
+
+   // Fetch the result and get the count
+   if ($row = $result->fetch_assoc()) {
+       $appointment_count = $row['appointment_count'];
+   } else {
+       $appointment_count = 0; // Default to 0 if no results found
+   }
+
+
+
+ 
 }
 
 
@@ -63,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
             <hr class="my-0">
             <div class=" col-12 ">
 
-                <div class="row px-lg-5 px-0" style="background-image: linear-gradient(to right top, #010e01, #0c260d, #0c3e12, #0c5712, #0d720c);">
+                <div class="row px-lg-5 px-0" style="background-image: linear-gradient(to right top, #020437, #082a62, #124f8e, #1877bc, #1aa2ea);">
 
                     <!-- Select Speciality Part -->
 
@@ -152,9 +157,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
 
             <div class="col-12 d-flex justify-content-center">
 
-                <div class=" col-8 col-lg-4 mt-2 p-3 my-3" style=" background-color: #0c3e12; border-radius: 10px; display: none;" id="AppointmentForm">
+                <div class=" col-10 col-lg-4 mt-3 p-3 my-3" style=" background-image: linear-gradient(to right top, #e7edf4, #d6e6f5, #c3e0f6, #aedaf7, #95d4f6); border-radius: 10px; box-shadow: 0 0 15px rgba(45, 0, 65, 0.2); display: none;" id="AppointmentForm">
 
-
+<div class=" col-12  p-0 ">
+    <div class="col-12 p-0  d-flex justify-content-center"><img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class="col-lg-4 col-4"></div>
+<div class="col-12 appointment_header d-flex justify-content-center fs-lg-2 fs-3">Prime Care Hospital</div>
+<div class=" col-12 fs-6 d-flex justify-content-center text-white">Please Enter the Patient Details</div>
+</div>
                         <div class=" col-12 p-0 mt-5 d-flex justify-content-center p-1"><input type="text" name="pName" id="pName" class=" form-control" placeholder="Patient Name With Initials" required></div>
                         <div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="text" name="nic" id="nic" class=" form-control" placeholder="Patient NIC" required></div>
                         <div class=" col-12 p-0  d-flex justify-content-center p-1"><input type="email" name="email" id="email" class=" form-control" placeholder="Enter Your Email" required></div>
@@ -214,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
 
                         <div class=" col-12 d-flex justify-content-center mt-5 my-3">
 
-                            <button class=" col-4 p-1 btn btn-secondary btn-sm " onclick="appointmentValidate();">Confirm Appointment</button>
+                            <button class=" col-4 p-1 btn btn-outline-primary btn-sm " onclick="appointmentValidate();">Confirm Appointment</button>
 
                         </div>
 
@@ -224,7 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
 
             </div>
 
-            <div class=" col-12 p-0 " style=" margin-top: 30vh;">
+            <div class=" col-12 p-0" style=" margin-top: 30vh;">
                 <?php include "footer.php"; ?>
             </div>
 
@@ -276,10 +285,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
     </script>
 
 
-
+<!--
     <script>
         // jQuery AJAX function for form submission
         $(document).ready(function() {
+            
             $('#appointmentSearchForm').on('submit', function(event) {
                 event.preventDefault(); // Prevent the default form submission
 
@@ -288,7 +298,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
                 var date = $('#date').val();
 
                 // Send AJAX request to AppointmentCount.php
-                $.ajax({
+           
+               $.ajax({
                     url: 'AppointmentCount.php',
                     method: 'POST',
                     data: {
@@ -317,9 +328,67 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['doctor']) && isset($_P
                         alert('Error fetching appointment data.');
                     }
                 });
+
+
             });
         });
     </script>
+    -->
+
+    <script>
+
+$(document).ready(function() {
+
+$('#appointmentSearchForm').on('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the values from the form
+    var doctor = $('#doctor').val();
+    var date = $('#date').val();
+
+    // Check if doctor or date is null or empty
+    if (!doctor || !date) {
+        // Hide the AppointmentForm and show an alertDiv
+        $('#AppointmentForm').hide();
+        $('#alertDiv').html('Please select both doctor and date to proceed.').show();
+        return; // Stop further execution
+    }
+
+    // Send AJAX request to AppointmentCount.php
+    $.ajax({
+        url: 'AppointmentCount.php',
+        method: 'POST',
+        data: {
+            doctor: doctor,
+            date: date
+        },
+        success: function(response) {
+            // Parse the JSON response
+            var data = JSON.parse(response);
+            var appointmentCount = data.count;
+
+            // Show the result in the resultDiv
+            $('#resultDiv').html('There are ' + appointmentCount + ' appointment(s) for the selected doctor and date.');
+            $('#resultDiv').show();
+
+            // Check if the appointment count is greater than 2, then show the alert div
+            if (appointmentCount > 2) {
+                $('#alertDiv').show(); // Show the alert div
+                $('#AppointmentForm').hide();
+            } else {
+                $('#alertDiv').hide(); // Hide the alert div if the count is 2 or less
+                $('#AppointmentForm').show();
+            }
+        },
+        error: function() {
+            alert('Error fetching appointment data.');
+        }
+    });
+});
+});
+
+    </script>
+
 <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
