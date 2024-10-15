@@ -18,10 +18,10 @@
     
   
 
-        <div class="header-image col-12 col-lg-12">
-            <div class="header-text col-12 col-lg-12 align-content-lg-start">
-                <div class="header-title col-12 col-lg-12 ">A Legacy of Caring, A Future of Health</div>
-                <div class="header-body col-12 col-lg-8">Dedicated to Compassionate Care and Excellence in Health. Our mission is to provide compassionate care with cutting-edge medical expertise. Our team is committed to delivering personalized, quality healthcare to every patient, ensuring a healthier tomorrow for our community.</div>
+        <div class="header-image col-12 col-lg-12 d-flex justify-content-center">
+            <div class="header-text col-12 col-lg-12 ">
+                <div class="header-title col-12 col-lg-12 d-flex justify-content-center ">A Legacy of Caring, A Future of Health</div>
+                <div class="header-body col-12 col-lg-12 d-flex justify-content-center mx-2">Dedicated to Compassionate Care and Excellence in Health. Our mission is to provide compassionate care with cutting-edge medical expertise. Our team is committed to delivering personalized, quality healthcare to every patient, ensuring a healthier tomorrow for our community.</div>
             </div>
         </div>
 

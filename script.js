@@ -13,14 +13,20 @@ function adminSignIn() {
 
     var r = new XMLHttpRequest();
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f2031fa40d1132a248c5758cfbd614bef3bd3fd0
     r.open("POST", "adminSignInProcess.php", true);
     r.send(f);
 
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f2031fa40d1132a248c5758cfbd614bef3bd3fd0
 pShow.onclick = function () {
     let pShow = document.getElementById("pShow");
     let password = document.getElementById("adminPassword");
@@ -260,11 +266,15 @@ function appointmentValidate() {
 
 }
 
+<<<<<<< HEAD
 
 
 
 //Validating Patient form
 
+=======
+//Validating Patient form
+>>>>>>> f2031fa40d1132a248c5758cfbd614bef3bd3fd0
 function clearForm() {
     document.getElementById("patientForm").reset(); 
     document.getElementById("responseMessage").innerText = ""; 
@@ -277,7 +287,10 @@ function validateForm() {
     const phone = document.getElementById("phone").value.trim();
     const date = document.getElementById("date").value;
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> f2031fa40d1132a248c5758cfbd614bef3bd3fd0
     const nameRegex = /^[a-zA-Z\s]{2,}$/; 
     const nicRegex = /^(?:\d{9}[Vv]|\d{12})$/; 
     const phoneRegex = /^\d{10}$/; 
@@ -288,7 +301,10 @@ function validateForm() {
         return false;
     }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> f2031fa40d1132a248c5758cfbd614bef3bd3fd0
     if (!nicRegex.test(nic)) {
         alert("Please enter a valid NIC (9 digits followed by 'V' or 12 digits).");
         return false;
@@ -340,7 +356,10 @@ document.getElementById("patientForm").addEventListener("submit", function(event
     });
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f2031fa40d1132a248c5758cfbd614bef3bd3fd0
 //update Patient
 function updatePatient() {
     const formData = new FormData(document.getElementById("patientForm"));
@@ -361,6 +380,10 @@ function updatePatient() {
         console.error('Error:', error);
         alert("An error occurred while updating the patient details.");
     });
+<<<<<<< HEAD
+=======
+
+>>>>>>> f2031fa40d1132a248c5758cfbd614bef3bd3fd0
 }
 
 //delete Patient
@@ -400,6 +423,7 @@ function deletePatient() {
 }
 
 
+<<<<<<< HEAD
 function doctorUpdate(){
 
 var dName = document.getElementById("dname").value;
@@ -485,4 +509,6 @@ r.open("POST", "doctorDeleteProcess.php", true);
 r.send(f);
 
 }
+=======
+>>>>>>> f2031fa40d1132a248c5758cfbd614bef3bd3fd0
 

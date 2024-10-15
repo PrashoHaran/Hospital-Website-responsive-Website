@@ -51,7 +51,6 @@
             display: block; 
             margin-bottom: 5px; 
         }
-
        
         .form-buttons {
             text-align: center; 

@@ -20,10 +20,10 @@ background-color: bisque;
 }
 
 .header-image {
-    background-image: url("images/header-image.jfif");
+    background-image: url("images/img-A-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 90vh;
 }
 
 /*
